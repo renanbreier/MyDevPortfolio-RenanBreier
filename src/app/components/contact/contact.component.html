@@ -1,0 +1,42 @@
+<div class="container" id="section5">
+  <div class="text">
+    <h1>Entre em contato</h1>
+    <p>Se você gostou do meu trabalho entre em contato!</p>
+  </div>
+  <div class="container_body">
+    <div class="container_form">
+      <form #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective.value)">
+        <div class="form_data">
+          <div class="name">
+            <input
+              type="text"
+              name="name"
+              [(ngModel)]="name"
+              placeholder="Nome completo"
+              required
+            />
+          </div>
+          <div class="email">
+            <input
+              type="email"
+              name="email"
+              [(ngModel)]="email"
+              placeholder="Endereço de email"
+              required
+            />
+          </div>
+        </div>
+        <div class="form_text-area">
+          <textarea
+            name="message"
+            [(ngModel)]="message"
+            placeholder="Sua mensagem"
+            rows="10"
+            required
+          ></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

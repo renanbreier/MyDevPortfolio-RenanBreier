@@ -1,0 +1,60 @@
+.timeline {
+  padding: 2rem;
+  max-width: 950px;
+  margin: auto;
+  min-height: 70vh;
+  padding-bottom: 15rem;
+  color: #fff;
+  font-family: Inter,sans-serif
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  border-left: 2px solid rgb(59 130 246);
+  padding-left: 1rem;
+}
+
+.icon {
+  position: absolute;
+  left: -1.1rem;
+  top: 0;
+  background: #111;
+  border: 2px solid rgb(59 130 246);
+  border-radius: 50%;
+  padding: 0.5rem;
+  color: #00bcd4;
+}
+
+.content {
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+}
+
+.content h3 {
+  margin: 0;
+}
+
+.company {
+  color: #00e0ff;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #ccc;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin: 0;
+  color: #aaa;
+}

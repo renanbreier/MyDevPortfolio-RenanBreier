@@ -1,0 +1,45 @@
+<div class="container_header">
+  <div class="title_container">
+    <div class="title1">
+      <h1>Renan</h1>
+    </div>
+    <div class="title2">
+      <h1>Breier</h1>
+    </div>
+  </div>
+  <div class="container_contacts">
+    <div class="links">
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <a href="javascript:void(0)" (click)="scrollToSection('section0')">Home</a>
+        </button>
+        <button mat-menu-item>
+          <a href="javascript:void(0)" (click)="scrollToSection('section1')">Sobre</a>
+        </button>
+        <button mat-menu-item>
+          <a href="javascript:void(0)" (click)="scrollToSection('section2')">Experiência</a>
+        </button>
+        <button mat-menu-item>
+          <a href="javascript:void(0)" (click)="scrollToSection('section3')">Projetos</a>
+        </button>
+        <button mat-menu-item>
+          <a href="javascript:void(0)" (click)="scrollToSection('section4')">Tecnologias</a>
+        </button>
+      </mat-menu>
+      <a href="javascript:void(0)" (click)="scrollToSection('section0')">Home</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('section1')">Sobre</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('section2')">Experiência</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('section3')">Projetos</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('section4')">Tecnologias</a>
+    </div>
+    <div class="contact">
+      <button (click)="scrollToSection('section5')">
+        <div class="content">
+          <img src="../../../assets/email_send.svg" />
+          <h1>Contato</h1>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,223 @@
+.container_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  margin-bottom: 80px;
+  font-family: Inter,sans-serif
+}
+
+.title_container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  animation: slide-r 1s ease-out;
+}
+
+.title1 {
+  color: #828282;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.title2 {
+  color: #f2f2f2;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.container_contacts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  animation: slide-l 1s ease-out;
+}
+
+.icons {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.links > button {
+  width: 200px;
+  height: 50px;
+  border-radius: 13px;
+  border: 2px solid rgb(59 130 246);
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  display: none;
+}
+
+::ng-deep .mat-mdc-menu-item-text > a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+::ng-deep .mat-mdc-menu-item-text > a:hover {
+  color: rgb(59 130 246);
+}
+
+::ng-deep .mat-mdc-menu-content {
+  background-color: #828282;
+}
+
+.links > a {
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.links > a:hover {
+  color: rgb(59 130 246);
+}
+
+.contact > button {
+  width: 200px;
+  height: 50px;
+  border-radius: 13px;
+  border: 2px solid rgb(59 130 246);
+  background-color: transparent;
+}
+
+.contact > button > .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.content > img {
+  width: 35px;
+  height: 35px;
+}
+
+.content > h1 {
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #828282;
+}
+
+@media (max-width: 1095px) {
+  .links > a {
+    font-size: 15px;
+  }
+  .contact > button {
+    width: 150px;
+    height: 25px;
+  }
+  .content > h1 {
+    font-size: 12px;
+  }
+  .content > img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 950px) {
+  .title1,
+  .title2 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 860px) {
+  .links > button {
+    display: block;
+    width: 150px;
+    height: 25px;
+    font-size: 12px;
+  }
+
+  .links > a {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .container_contacts {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 560px) {
+  .title1,
+  .title2 {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .title1,
+  .title2 {
+    font-size: 10px;
+  }
+  .links > button {
+    width: 80px;
+    height: 25px;
+  }
+  .contact > button {
+    width: 80px;
+    height: 25px;
+  }
+  .contact > button > .content > img {
+    display: none;
+  }
+  .contact > button > .content > h1 {
+    font-size: 10px;
+  }
+}
+
+@keyframes slide-r {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-l {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

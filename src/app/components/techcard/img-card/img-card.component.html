@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="icon">
+    <img [src]="techImg" alt="{{ techName }}" />
+  </div>
+  <div class="name">{{ techName }}</div>
+  <div class="progress-bar">
+    <div class="filled" [style.width.%]="(techLevel / 5) * 100"></div>
+  </div>
+  <div class="level">{{ techLevel }}/5</div>
+</div>

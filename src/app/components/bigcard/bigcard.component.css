@@ -22,6 +22,18 @@
   line-height: 2.25rem;
 }
 
+h5::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+  margin-left: 4px;
+  color: #3b82f6;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 .bigCard_text > .titulo {
   color: rgb(248 250 252);
   font-size: 3rem;
@@ -79,11 +91,10 @@
 
 .bigCard_photo {
   padding: 20px;
-  animation: slide-l 1s ease-out;
 }
 
 .bigCard_photo > a > img {
-  width: 300px;
+  width: 330px;
   border-radius: 50%;
   box-shadow: 7px 1px 51px 38px rgba(0, 0, 0, 0.4);
   transition: transform 0.8s;
@@ -105,7 +116,7 @@
   }
 
   .bigCard_photo > a > img {
-    width: 220px;
+    width: 280px;
   }
 
   .bigCard_text > h5 {
@@ -143,7 +154,7 @@
 
 @media (max-width: 415px) {
   .bigCard_photo > a > img {
-    width: 130px;
+    width: 160px;
   }
 
   .bigCard_text > h5 {

@@ -8,7 +8,7 @@
       <h3>{{ exp.title }}</h3>
       <span class="company">{{ exp.company }}</span>
       <span class="date">{{ exp.date }}</span>
-      <p>{{ exp.description }}</p>
+      <p [innerHTML]="exp.description"></p>
     </div>
   </div>
 </div>

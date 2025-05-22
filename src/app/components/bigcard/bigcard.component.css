@@ -154,7 +154,7 @@ h5::after {
 
 @media (max-width: 415px) {
   .bigCard_photo > a > img {
-    width: 190px;
+    width: 240px;
   }
 
   .bigCard_text > h5 {

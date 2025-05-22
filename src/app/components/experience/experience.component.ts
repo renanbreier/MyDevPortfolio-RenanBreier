@@ -14,7 +14,7 @@ export class ExperienceComponent {
       title: 'Analista de Suporte N3',
       company: 'Sonner Sistemas',
       date: '2023 - Presente',
-      description: 'Atuo na linha de frente como suporte técnico, atendendo Prefeituras, Câmaras e Autarquias.' +
+      description: 'Atuo na linha de frente como suporte técnico, atendendo Prefeituras, Câmaras e Autarquias. ' +
       'Minha atuação vai desde tarefas simples como a criação de usuários até tarefas mais complexas, como a configuração de web-services. ' + 
       'Participo de implantações, importações de dados e treinamentos, além de atuar na liderança de uma equipe de suportes.\n' +
       '<br>Principais atividades:\n- Atendimento de usuários e resolução de chamados N3\n- Implantação de sistemas de RH e Contabilidade\n- Treinamento e capacitação de usuários finais\n' +

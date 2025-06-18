@@ -1,27 +1,97 @@
-# Portifolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+# Portfólio - Renan Breier
 
-## Development server
+Este projeto é um portfólio pessoal desenvolvido em **Angular**, com foco em apresentar minhas experiências profissionais, habilidades técnicas e principais projetos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Tecnologias utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- TypeScript
+- Angular Animations
+- HTML5
+- CSS3 / SCSS
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🎨 Principais características
 
-## Running unit tests
+- Página inicial com apresentação e texto de boas-vindas
+- Sessão de experiências profissionais
+- Seção de projetos com destaque para links externos (GitHub, deploy, etc.)
+- Listagem de tecnologias utilizadas (Skills)
+- Estilo responsivo, adaptado para desktop e mobile
+- Navegação por componentes Angular separados (Home, About, Experience, Projects, Techs)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 📦 Como executar o projeto localmente
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+> Pré-requisitos: Node.js (recomendado v18.x) e Angular CLI instalado globalmente.
 
-## Further help
+1. **Clone o repositório**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone https://github.com/renanbreier/Portifolio-RenanBreier.git
+cd Portifolio-RenanBreier
+```
+
+2. **Instale as dependências**
+
+```bash
+npm install
+```
+
+3. **Execute o projeto**
+
+```bash
+ng serve
+```
+
+4. **Acesse no navegador**
+
+```
+http://localhost:4200/
+```
+
+---
+
+## 📌 Estrutura principal do projeto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── about/
+│   │   ├── experience/
+│   │   ├── home/
+│   │   ├── projects/
+│   │   └── techs/
+│   ├── pages/
+│   │   └── home/
+│   └── app.module.ts
+├── assets/
+├── environments/
+└── index.html
+```
+
+---
+
+## ✨ Customização
+
+Você pode alterar os textos, imagens e links dos projetos diretamente nos componentes correspondentes dentro da pasta `/src/app/components/`.
+
+Por exemplo:
+
+- Experiências: em `/components/experience/experience.component.ts`
+- Projetos: em `/components/projects/projects.component.ts`
+- Skills: em `/components/techs/techs.component.ts`
+
+---
+
+## 👨‍💻 Autor
+
+Renan Breier  
+[LinkedIn](https://www.linkedin.com/in/renanbreier)  
+[GitHub](https://github.com/renanbreier)

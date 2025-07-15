@@ -20,6 +20,8 @@
   color: rgb(248 250 252);
   font-size: 1.875rem;
   line-height: 2.25rem;
+  width: 450px;
+  text-align: left;
 }
 
 h5::after {
@@ -121,6 +123,8 @@ h5::after {
 
   .bigCard_text > h5 {
     font-size: 1.5rem;
+    width: auto;
+    text-align: center;
   }
 
   .bigCard_text > .titulo,

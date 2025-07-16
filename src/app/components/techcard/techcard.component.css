@@ -45,4 +45,24 @@
   padding: 30px;
 }
 
+@media (max-width: 768px) {
+  .techStack_container {
+    width: 95%;
+  }
 
+  .tech_grid {
+    padding: 20px 15px; 
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+    .tech_grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .filters button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}

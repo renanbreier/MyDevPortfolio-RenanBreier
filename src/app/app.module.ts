@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { BackToTopDirective } from './directive/back-to-top.directive';
 import { ExperienceComponent } from "./components/experience/experience.component";
+import { FormationsComponent } from './components/formations/formations.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ExperienceComponent } from "./components/experience/experience.componen
     ContactComponent,
     InputComponent,
     BackToTopDirective,
+    FormationsComponent,
   ],
   imports: [
     BrowserModule,

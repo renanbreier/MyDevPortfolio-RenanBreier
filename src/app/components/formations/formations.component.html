@@ -1,0 +1,21 @@
+<section class="formations-container" id="section6">
+  <h2>Formações</h2>
+  <div class="formations-grid">
+    <div *ngFor="let formation of formations" class="formation-card">
+      <div class="card-header">
+        <div class="icon">
+          <i [class]="formation.icon"></i>
+        </div>
+        <div class="dot"></div>
+      </div>
+      <div class="card-body">
+        <h3>{{ formation.title }}</h3>
+        <div class="info">
+          <span class="institution">{{ formation.institution }}</span>
+          <span class="period">{{ formation.period }}</span>
+        </div>
+        <p>{{ formation.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

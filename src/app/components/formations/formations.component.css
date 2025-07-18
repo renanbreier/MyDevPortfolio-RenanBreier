@@ -1,0 +1,121 @@
+/* Estilo geral do container da seção */
+.formations-container {
+  width: 80%;
+  margin: auto;  
+  padding: 5rem 2rem;
+  padding-bottom: 10rem;
+  font-family: Inter, sans-serif;
+  color: #ccd6f6;
+}
+
+/* Título da seção "Formações" */
+h2 {
+  font-size: 2rem; /* 32px */
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Efeito de sublinhado azul no título */
+h2::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 4px;
+  background-color: #3b82f6; /* Azul usado no seu portfólio */
+  margin-top: 8px;
+}
+
+/* Grid que organiza os cards */
+.formations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem; /* Espaçamento entre os cards */
+  margin-top: 2.5rem;
+}
+
+/* Estilo individual de cada card */
+.formation-card {
+  background-color: #112240; /* Cor de fundo do card, um pouco mais clara */
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formation-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+}
+
+/* Cabeçalho do card (ícone e ponto) */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+/* Círculo do ícone */
+.icon {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+/* Ícone dentro do círculo */
+.icon i {
+  font-size: 1.75rem;
+  color: #3b82f6;
+}
+
+/* Ponto branco no canto superior direito */
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* Corpo do card (textos) */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.card-body .info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #8892b0; /* Cor mais suave para detalhes */
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* Garante que não quebre em telas pequenas */
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #a8b2d1; /* Cor do texto de descrição */
+  flex-grow: 1;
+}
+
+/* Ajustes para tablets e celulares */
+@media (max-width: 768px) {
+  .formations-container {
+    width: 95%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

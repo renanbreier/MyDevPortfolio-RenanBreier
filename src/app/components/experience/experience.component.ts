@@ -11,20 +11,33 @@ import { CommonModule } from '@angular/common';
 export class ExperienceComponent {
   experiences = [
     {
-      title: 'Analista de Sistemas',
-      company: 'Sonner Sistemas',
-      date: '2023 - Presente',
-      description: 'Atuo como Analista de Sistemas e Desenvolvedor Full Stack, liderando a implantação de soluções de ponta a ponta e o ciclo de vida de novas funcionalidades. Tenho experiência em Java (Spring Boot), Angular, TypeScript e APIs REST, com forte atuação em cloud (AWS e GCP) e bancos de dados como PostgreSQL e Oracle.\n\n'
-      + 'Participo ativamente do desenvolvimento, integração e homologação de sistemas, aplicando metodologias ágeis (Scrum) e garantindo entregas contínuas. Também exerço liderança técnica, apoiando a equipe na resolução de problemas complexos e promovendo boas práticas em qualidade e escalabilidade.\n\n'
-      + 'Competências principais: Java | Spring Boot | Angular | TypeScript | APIs REST | PostgreSQL | Oracle | AWS | GCP | Scrum | CI/CD | Testes e Homologação.'
+      title: 'Desenvolvedor de Software',
+      company: 'Autônomo',
+      date: 'Jan 2024 - Presente',
+      description: 'Desenvolvedor de software autônomo com sólida experiência em projetos tanto para pessoas físicas quanto empresas. Trabalho com tecnologias modernas e escaláveis, com foco em entregar soluções robustas, de alta qualidade e alinhadas às necessidades de negócio.'
     },
     {
-      title: 'Analista de Infraestrutura (Jovem Aprendiz)',
+      title: 'Gerente de Suporte Técnico',
+      company: 'Sonner Sistemas',
+      date: 'Jul 2025 - Presente',
+      description: 'Responsável por liderar três projetos de implantações técnicas, atuando como ponte entre clientes e equipe para garantir eficiência no atendimento. No dia a dia, coordeno a gestão de chamados, organizo prioridades e acompanho a execução das demandas, assegurando prazos e qualidade nas entregas.\n\n'
+      + 'Participo ativamente das implantações de sistemas, homologação de melhorias e capacitação de usuários, sempre com foco em manter a satisfação dos clientes e a evolução contínua dos processos.'
+    },
+    {
+      title: 'Analista de Suporte',
+      company: 'Sonner Sistemas',
+      date: 'Mar 2023 - Jun 2025',
+      description: 'Atuei na linha de frente do suporte técnico, prestando atendimento especializado a servidores públicos de Prefeituras, Câmaras e Autarquias clientes Sonner.\n\n'
+      + 'Minha atuação abregeu desde demandas operacionais até configurações técnicas avançadas, como a integração de sistemas via web services.\n\n'
+      + 'Obtive experiência em implantação de sistemas corporativos, migração e conversão de dados, além de ministrar treinamentos presenciais e remotos em larga escala. Um dos marcos da minha trajetória foi a coordenação do desenvolvimento e implantação do aplicativo "Cidadão Online", contribuindo para a transformação digital dos serviços públicos em diversas cidades.\n\n'
+    },
+    {
+      title: 'Analista de Infraestrutura',
       company: 'Prefeitura Municipal da Estância de Socorro',
       date: '2021 - 2023',
       description: 'Atuei como Analista de Infraestrutura no setor de Tecnologia da Informação da Prefeitura, onde adquiri experiência prática fundamental para minha trajetória profissional. Nesse período, desenvolvi competências em suporte técnico, administração de sistemas, redes e ambientes em nuvem, atuando desde a infraestrutura básica até a configuração de servidores e redes de fibra óptica.\n\n'
-      + 'Minhas atividades incluíram desenvolvimento de software interno (Java, Spring, Python, Django), montagem e manutenção de computadores, instalação e configuração de sistemas operacionais Windows e Linux, além da administração de servidores físicos e em nuvem (AWS e GCP). Também trabalhei com monitoramento de rede via Zabbix, gestão de chamados pelo GLPI e manutenção de infraestrutura utilizando equipamentos Mikrotik e Cisco.\n\n'
-      + 'Tecnologias e ferramentas: Java | Spring | Python | Django | Linux | Windows Server | AWS | GCP | Zabbix | GLPI | Mikrotik | Cisco'
+      + 'Minhas atividades incluíram desenvolvimento de software interno, montagem e manutenção de computadores, instalação e configuração de sistemas operacionais Windows e Linux, além da administração de servidores físicos e em nuvem (AWS e GCP).\n\n'
+      + 'Tecnologias e ferramentas: Java | Spring | Linux | AWS | GCP | Zabbix | GLPI | Mikrotik | Cisco'
     }
   ].map(exp => ({
     ...exp,

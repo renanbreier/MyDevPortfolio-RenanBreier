@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { BackToTopDirective } from './directive/back-to-top.directive';
 import { ExperienceComponent } from "./components/experience/experience.component";
 import { FormationsComponent } from './components/formations/formations.component';
+import { SkillsComponent } from './components/skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FormationsComponent } from './components/formations/formations.componen
     InputComponent,
     BackToTopDirective,
     FormationsComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,

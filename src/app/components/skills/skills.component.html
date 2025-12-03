@@ -1,0 +1,20 @@
+<section id="section4" class="skills-section">
+  <div class="content-wrapper">
+    <div class="header">
+      <h2 class="title">&lt; Minhas Habilidades /&gt;</h2>
+      <p class="subtitle">
+        Tecnologias e ferramentas que utilizo para criar experiências digitais modernas e eficientes.
+      </p>
+    </div>
+
+    <div class="grid" @listAnimation>
+      <div *ngFor="let skill of skillsList" class="skill-card">
+        <div class="icon-wrapper">
+          <img [src]="skill.iconClass" />
+        </div>
+        <h3 class="skill-title">{{ skill.name }}</h3>
+        <p class="skill-desc">{{ skill.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

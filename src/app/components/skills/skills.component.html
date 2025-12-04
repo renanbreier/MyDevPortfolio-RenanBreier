@@ -8,7 +8,10 @@
     </div>
 
     <div class="grid" @listAnimation>
-      <div *ngFor="let skill of skillsList" class="skill-card">
+      <div *ngFor="let skill of skillsList"
+           class="skill-card"
+           [style.--from]="skill.gradientFrom"
+           [style.--to]="skill.gradientTo">
         <div class="icon-wrapper">
           <img [src]="skill.iconClass" />
         </div>

@@ -15,10 +15,10 @@ import { InputComponent } from './components/atom/input/input.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { BackToTopDirective } from './directive/back-to-top.directive';
-import { ExperienceComponent } from "./components/experience/experience.component";
 import { FormationsComponent } from './components/formations/formations.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
     FormationsComponent,
     SkillsComponent,
     ProjectsComponent,
+    TimelineComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,6 @@ import { ProjectsComponent } from './components/projects/projects.component';
     FormsModule,
     MatButtonModule,
     MatMenuModule,
-    ExperienceComponent
 ],
   providers: [],
   bootstrap: [AppComponent],

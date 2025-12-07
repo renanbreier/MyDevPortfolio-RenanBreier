@@ -1,0 +1,82 @@
+<section id="jobs" class="timeline-section">
+  <div class="header" @fadeInUp>
+    <h2 class="title">
+      <span>&lt; Experiência Profissional /&gt;</span>
+    </h2>
+    <p class="subtitle">Minha jornada profissional e as experiências que moldaram minha carreira em tecnologia.</p>
+  </div>
+
+  <div class="timeline-wrap">
+    <div class="timeline-line" aria-hidden="true"></div>
+
+    <div class="items">
+      <div
+        class="item"
+        *ngFor="let exp of experiences; let i = index"
+        [attr.data-index]="i"
+        #cardRefs
+        [@slideIn]="slideState(i)"
+      >
+        <div
+          class="timeline-point"
+          [ngStyle]="{
+            'background-image':
+              'linear-gradient(180deg,' + exp.colorFrom + ', ' + exp.colorTo + ')'
+          }"
+        >
+          <span *ngIf="exp.atual" class="pulse"></span>
+        </div>
+
+        <div class="card-wrapper" [class.left]="isLeft(i)" [class.right]="!isLeft(i)">
+          <article
+            class="card"
+            [style.--from]="exp.colorFrom"
+            [style.--to]="exp.colorTo"
+            title="{{ exp.cargo }} - {{ exp.empresa }}"
+          >
+            <div class="card-accent" aria-hidden="true"></div>
+
+            <div class="card-body">
+              <div class="card-top">
+                <div class="badge" *ngIf="exp.atual">Atualmente</div>
+
+                <div class="title-row">
+                  <div class="icon-box" [style.background]="
+                      'linear-gradient(90deg,' + exp.colorFrom + ',' + exp.colorTo + ')'
+                    ">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <path d="M3 7.5h18v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5v-11z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M16 7.5v-1.5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v1.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 class="cargo">{{ exp.cargo }}</h3>
+                </div>
+              </div>
+
+              <div class="meta">
+                <div class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M4 21V3h10v18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 7h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 11h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="meta-text">{{ exp.empresa }}</span>
+                </div>
+
+                <div class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.2"/>
+                    <path d="M16 3v4M8 3v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="meta-text">{{ exp.periodo }}</span>
+                </div>
+              </div>
+
+              <p class="desc">{{ exp.descricao }}</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

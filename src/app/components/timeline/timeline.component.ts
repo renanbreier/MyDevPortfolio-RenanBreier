@@ -70,10 +70,10 @@ export class TimelineComponent implements AfterViewInit, OnDestroy {
   experiences = [
     {
       periodo: 'Jan 2024 - Atual',
-      cargo: 'Desenvolvedor FullStack',
+      cargo: 'Engenheiro de Software',
       empresa: 'Autônomo',
       descricao:
-        'Atuo como Desenvolvedor FullStack, desenvolvendo aplicações web completas utilizando Angular no frontend e Java com Spring Framework no backend. Trabalho com banco de dados PostgreSQL, criando soluções escaláveis e performáticas para atender as necessidades dos clientes.',
+        'Atuo como Engenheiro de Software, desenvolvendo aplicações web completas utilizando Angular no frontend e Java com Spring Framework no backend. Trabalho com banco de dados PostgreSQL, criando soluções escaláveis e performáticas para atender as necessidades dos clientes.',
       atual: true,
       colorFrom: '#3b82f6',
       colorTo: '#06b6d4',
@@ -90,7 +90,7 @@ export class TimelineComponent implements AfterViewInit, OnDestroy {
     },
     {
       periodo: 'Mar 2023 - Jun 2025',
-      cargo: 'Analista de Suporte',
+      cargo: 'Analista de Suporte Técnico',
       empresa: 'Sonner Sistemas',
       descricao:
         'Atuei na linha de frente do suporte, prestando atendimento técnico especializado. Minha atuação abregeu desde demandas operacionais até configurações técnicas avançadas, como a integração de sistemas via web services.',

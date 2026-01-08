@@ -42,7 +42,7 @@ h5::after {
   line-height: 1;
 }
 
-.bigCard_text > .sub-titulo {
+span {
   color: rgb(59 130 246);
   font-size: 3rem;
   line-height: 1;
@@ -128,7 +128,7 @@ h5::after {
   }
 
   .bigCard_text > .titulo,
-  .bigCard_text > .sub-titulo {
+  span {
     font-size: 2.2rem;
   }
 
@@ -166,7 +166,7 @@ h5::after {
   }
 
   .bigCard_text > .titulo,
-  .bigCard_text > .sub-titulo {
+  span {
     font-size: 1.5rem;
   }
 

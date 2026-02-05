@@ -69,22 +69,22 @@ export class TimelineComponent implements AfterViewInit, OnDestroy {
 
   experiences = [
     {
-      periodo: 'Jan 2024 - Atual',
+      periodo: 'Fev 2026 - Atual',
       cargo: 'Engenheiro de Software',
-      empresa: 'Autônomo',
+      empresa: 'Sonner Sistemas',
       descricao:
-        'Atuo como Engenheiro de Software, desenvolvendo aplicações web completas utilizando Angular no frontend e Java com Spring Framework no backend. Trabalho com banco de dados PostgreSQL, criando soluções escaláveis e performáticas para atender as necessidades dos clientes.',
+        'Atuo como Engenheiro de Software no desenvolvimento, manutenção e evolução de sistemas corporativos, participando ativamente da criação de novos módulos e funcionalidades utilizando Java e Angular.',
       atual: true,
       colorFrom: '#3b82f6',
       colorTo: '#06b6d4',
     },
     {
-      periodo: 'Jul 2025 - Atual',
+      periodo: 'Jul 2025 - Jan 2026',
       cargo: 'Gerente de Suporte Técnico',
       empresa: 'Sonner Sistemas',
       descricao:
-        'Atuo como Gerente Técnico, realizando a ponte entre o cliente e a equipe de suporte garantindo eficiência no atendimento. No dia a dia, coordeno a gestão de chamados, organizo prioridades e acompanho a execução das demandas, assegurando prazos e qualidade nas entregas.',
-      atual: true,
+        'Atuei como Gerente Técnico, realizando a ponte entre o cliente e a equipe de suporte garantindo eficiência no atendimento. No dia a dia, coordeno a gestão de chamados, organizo prioridades e acompanho a execução das demandas, assegurando prazos e qualidade nas entregas.',
+      atual: false,
       colorFrom: '#8b5cf6',
       colorTo: '#ec4899',
     },

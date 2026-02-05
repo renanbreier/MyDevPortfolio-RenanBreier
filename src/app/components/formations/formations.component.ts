@@ -30,5 +30,4 @@ export class FormationsComponent {
       description: 'O curso proporciona uma base robusta em conceitos de computação em nuvem, abordando gerenciamento de identidade (IAM), redes (VPC), computação (EC2, Lambda, Elastic Beanstalk), armazenamento (S3, EBS, EFS, Glacier), bancos de dados (RDS, DynamoDB, Redshift, Aurora), escalabilidade (Auto Scaling, Elastic Load Balancing) e monitoramento (CloudWatch)'
     },
   ];
-
 }

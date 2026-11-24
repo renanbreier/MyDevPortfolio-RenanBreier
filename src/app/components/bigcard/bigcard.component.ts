@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { LandingButtonService } from 'src/app/service/landing-button.service';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { LandingButtonService } from '../../service/landing-button.service';
 
 @Component({
   selector: 'app-bigcard',
   templateUrl: './bigcard.component.html',
-  styleUrls: ['./bigcard.component.css']
+  styleUrls: ['./bigcard.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: false,
 })
 export class BigcardComponent implements OnInit {
   showLinks = false;

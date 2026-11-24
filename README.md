@@ -7,53 +7,54 @@ Este projeto é um portfólio pessoal desenvolvido em **Angular**, com foco em a
 
 ## 🚀 Tecnologias utilizadas
 
-- Angular
-- TypeScript
+- Angular 22.3 e Angular CLI
+- Angular Material
+- TypeScript 6
 - Angular Animations
-- HTML5
-- CSS3 / SCSS
+- HTML5 e CSS3
 
 ---
 
 ## 🎨 Principais características
 
 - Página inicial com apresentação e texto de boas-vindas
-- Sessão de experiências profissionais
+- Seção de experiências profissionais
 - Seção de projetos com destaque para links externos (GitHub, deploy, etc.)
 - Listagem de tecnologias utilizadas (Skills)
 - Estilo responsivo, adaptado para desktop e mobile
-- Navegação por componentes Angular separados (Home, About, Experience, Projects, Techs)
+- Navegação entre as seções de apresentação, habilidades, projetos, experiência e formação
 
 ---
 
 ## 📦 Como executar o projeto localmente
 
-> Pré-requisitos: Node.js (recomendado v18.x) e Angular CLI instalado globalmente.
+Instale o [Node.js](https://nodejs.org/en/download) 24 LTS, a partir da versão 24.15.0 na linha 24. Ele já inclui o npm. Confira se os dois estão disponíveis no terminal com `node -v` e `npm -v`.
 
-1. **Clone o repositório**
-
-```bash
-git clone https://github.com/renanbreier/Portifolio-RenanBreier.git
-cd Portifolio-RenanBreier
-```
-
-2. **Instale as dependências**
+Se você ainda não tem uma cópia do projeto, clone o repositório.
 
 ```bash
-npm install
+git clone https://github.com/renanbreier/MyDevPortfolio-RenanBreier.git
+cd MyDevPortfolio-RenanBreier
 ```
 
-3. **Execute o projeto**
+Na pasta do projeto, instale as dependências do `package-lock.json` e inicie o servidor de desenvolvimento.
 
 ```bash
-ng serve
+npm ci
+npm start
 ```
 
-4. **Acesse no navegador**
+Acesse [localhost:4200](http://localhost:4200/). Para encerrar o servidor, pressione `Ctrl+C` no terminal.
 
+O `npm start` usa o Angular CLI instalado no próprio projeto. Para conferir a versão do Angular e do CLI, execute `npm run ng -- version`.
+
+## 🛠️ Build de produção
+
+```bash
+npm run build
 ```
-http://localhost:4200/
-```
+
+Os arquivos gerados ficam em `dist/portifolio/`.
 
 ---
 
@@ -64,29 +65,25 @@ src/
 ├── app/
 │   ├── components/
 │   │   ├── about/
-│   │   ├── experience/
-│   │   ├── home/
+│   │   ├── formations/
 │   │   ├── projects/
-│   │   └── techs/
+│   │   ├── skills/
+│   │   └── timeline/
 │   ├── pages/
 │   │   └── home/
 │   └── app.module.ts
 ├── assets/
-├── environments/
-└── index.html
+├── index.html
+└── main.ts
 ```
 
 ---
 
 ## ✨ Customização
 
-Você pode alterar os textos, imagens e links dos projetos diretamente nos componentes correspondentes dentro da pasta `/src/app/components/`.
-
-Por exemplo:
-
-- Experiências: em `/components/experience/experience.component.ts`
-- Projetos: em `/components/projects/projects.component.ts`
-- Skills: em `/components/techs/techs.component.ts`
+- Edite o histórico profissional em [timeline.component.ts](src/app/components/timeline/timeline.component.ts).
+- Edite os textos, links e referências às imagens dos projetos em [projects.component.ts](src/app/components/projects/projects.component.ts).
+- Edite as habilidades em [skills.component.ts](src/app/components/skills/skills.component.ts).
 
 ---
 

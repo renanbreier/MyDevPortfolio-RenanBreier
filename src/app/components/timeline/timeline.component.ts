@@ -5,6 +5,7 @@ import {
   OnDestroy,
   QueryList,
   ViewChildren,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import {
   animate,
@@ -59,6 +60,8 @@ import {
       ]),
     ]),
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: false,
 })
 export class TimelineComponent implements AfterViewInit, OnDestroy {
   inView = new Set<number>();

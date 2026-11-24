@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   trigger,
   style,
@@ -32,7 +32,9 @@ interface Skill {
         ], { optional: true })
       ])
     ]),
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: false,
 })
 export class SkillsComponent {
   skillsList: Skill[] = [

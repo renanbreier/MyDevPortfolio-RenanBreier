@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   trigger,
   transition,
@@ -59,6 +59,8 @@ interface Project {
       ]),
     ]),
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: false,
 })
 export class ProjectsComponent {
   hoveredProject: number | null = null;

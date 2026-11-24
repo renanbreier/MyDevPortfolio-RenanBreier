@@ -2,11 +2,12 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appBackToTop]',
+  standalone: false,
 })
 export class BackToTopDirective {
   constructor(private el: ElementRef) {}
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   checkScrollPosition() {
     const backToTopButton = this.el.nativeElement;
 

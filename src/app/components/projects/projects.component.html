@@ -41,7 +41,9 @@
             <p class="featured-desc">{{ featuredProject.description }}</p>
 
             <div class="techs">
-              <span class="pill" *ngFor="let t of featuredProject.techs">{{ t }}</span>
+              @for (t of featuredProject.techs; track t) {
+                <span class="pill">{{ t }}</span>
+              }
             </div>
 
             <a
@@ -65,7 +67,7 @@
 
     <!-- Grid of other projects -->
     <div class="grid">
-      <ng-container *ngFor="let project of otherProjects; let i = index">
+      @for (project of otherProjects; track project.id) {
         <article
           class="project-card"
           [class.hovered]="hoveredProject === project.id"
@@ -97,7 +99,9 @@
             <p class="card-desc">{{ project.description }}</p>
 
             <div class="techs small">
-              <span class="pill" *ngFor="let t of project.techs">{{ t }}</span>
+              @for (t of project.techs; track t) {
+                <span class="pill">{{ t }}</span>
+              }
             </div>
           </div>
 
@@ -112,7 +116,7 @@
             </a>
           </div>
         </article>
-      </ng-container>
+      }
     </div>
   </div>
 </section>

@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-formations',
   templateUrl: './formations.component.html',
-  styleUrls: ['./formations.component.css']
+  styleUrls: ['./formations.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: false,
 })
 export class FormationsComponent {
 

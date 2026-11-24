@@ -1,9 +1,11 @@
+@let text = language.text();
+@let locale = language.language();
 <section id="section4" class="skills-section">
   <div class="content-wrapper">
     <div class="header">
-      <h2 class="title">&lt; Minhas Habilidades /&gt;</h2>
+      <h2 class="title">&lt; {{ text.skillsTitle }} /&gt;</h2>
       <p class="subtitle">
-        Tecnologias e ferramentas que utilizo para criar experiências digitais modernas e eficientes.
+        {{ text.skillsSubtitle }}
       </p>
     </div>
 
@@ -18,7 +20,7 @@
             <img [src]="skill.iconClass" />
           </div>
           <h3 class="skill-title">{{ skill.name }}</h3>
-          <p class="skill-desc">{{ skill.description }}</p>
+          <p class="skill-desc">{{ skill.description[locale] }}</p>
         </div>
       }
     </div>

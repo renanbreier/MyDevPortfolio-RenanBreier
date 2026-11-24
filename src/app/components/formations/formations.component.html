@@ -1,5 +1,7 @@
+@let text = language.text();
+@let locale = language.language();
 <section class="formations-container" id="section6">
-  <h2>Formações</h2>
+  <h2>{{ text.educationTitle }}</h2>
   <div class="formations-grid">
     @for (formation of formations; track formation) {
       <div class="formation-card">
@@ -10,12 +12,12 @@
           <div class="dot"></div>
         </div>
         <div class="card-body">
-          <h3>{{ formation.title }}</h3>
+          <h3>{{ formation.title[locale] }}</h3>
           <div class="info">
             <span class="institution">{{ formation.institution }}</span>
             <span class="period">{{ formation.period }}</span>
           </div>
-          <p>{{ formation.description }}</p>
+          <p>{{ formation.description[locale] }}</p>
         </div>
       </div>
     }

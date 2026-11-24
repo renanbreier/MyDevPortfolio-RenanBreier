@@ -6,6 +6,6 @@
 <app-timeline></app-timeline>
 <app-formations></app-formations>
 <app-contact></app-contact>
-<button appBackToTop class="backToTop" (click)="scrollToTop()">
+<button appBackToTop class="backToTop" [attr.aria-label]="language.text().backToTop" (click)="scrollToTop()">
   <img class="icon" src="../../../assets/up-arrow.svg" alt="" srcset="" />
 </button>

@@ -1,7 +1,8 @@
+@let text = language.text();
 <div class="container" id="section5">
   <div class="text">
-    <h1>Entre em contato</h1>
-    <p>Se você gostou do meu trabalho entre em contato!</p>
+    <h1>{{ text.contactTitle }}</h1>
+    <p>{{ text.contactSubtitle }}</p>
   </div>
   <div class="container_body">
     <div class="container_form">
@@ -12,7 +13,8 @@
               type="text"
               name="name"
               [(ngModel)]="name"
-              placeholder="Nome completo"
+              [placeholder]="text.contactName"
+              [attr.aria-label]="text.contactName"
               required
             />
           </div>
@@ -21,7 +23,8 @@
               type="email"
               name="email"
               [(ngModel)]="email"
-              placeholder="Endereço de email"
+              [placeholder]="text.contactEmail"
+              [attr.aria-label]="text.contactEmail"
               required
             />
           </div>
@@ -30,12 +33,13 @@
           <textarea
             name="message"
             [(ngModel)]="message"
-            placeholder="Sua mensagem"
+            [placeholder]="text.contactMessage"
+            [attr.aria-label]="text.contactMessage"
             rows="10"
             required
           ></textarea>
         </div>
-        <button type="submit">Enviar</button>
+        <button type="submit">{{ text.contactSend }}</button>
       </form>
     </div>
   </div>

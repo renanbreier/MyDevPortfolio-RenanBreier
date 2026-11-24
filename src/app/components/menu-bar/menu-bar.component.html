@@ -1,3 +1,5 @@
+@let text = language.text();
+@let english = language.language() === 'en-US';
 <div class="container_header">
   <div class="title_container">
     <div class="title1">
@@ -12,38 +14,56 @@
       <button mat-button [matMenuTriggerFor]="menu">Menu</button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section0')">Home</a>
+          <a href="javascript:void(0)" (click)="scrollToSection('section0')">{{ text.home }}</a>
         </button>
         <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section1')">Sobre</a>
+          <a href="javascript:void(0)" (click)="scrollToSection('section1')">{{ text.about }}</a>
         </button>
         <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section4')">Habilidades</a>
+          <a href="javascript:void(0)" (click)="scrollToSection('section4')">{{ text.skills }}</a>
         </button>
         <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section3')">Projetos</a>
+          <a href="javascript:void(0)" (click)="scrollToSection('section3')">{{ text.projects }}</a>
         </button>
         <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('jobs')">Experiência</a>
+          <a href="javascript:void(0)" (click)="scrollToSection('jobs')">{{ text.experience }}</a>
         </button>
         <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section6')">Formação</a>
+          <a href="javascript:void(0)" (click)="scrollToSection('section6')">{{ text.education }}</a>
         </button>
       </mat-menu>
-      <a href="javascript:void(0)" (click)="scrollToSection('section0')">Home</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('section1')">Sobre</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('section4')">Habilidades</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('section3')">Projetos</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('jobs')">Experiência</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('section6')">Formação</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('section0')">{{ text.home }}</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('section1')">{{ text.about }}</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('section4')">{{ text.skills }}</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('section3')">{{ text.projects }}</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('jobs')">{{ text.experience }}</a>
+      <a href="javascript:void(0)" (click)="scrollToSection('section6')">{{ text.education }}</a>
     </div>
     <div class="contact">
       <button (click)="scrollToSection('section5')">
         <div class="content">
-          <img src="../../../assets/email_send.svg" />
-          <h1>Contato</h1>
+          <img src="../../../assets/email_send.svg" alt="" />
+          <h1>{{ text.contact }}</h1>
         </div>
       </button>
     </div>
+    <button
+      type="button"
+      class="language-switch"
+      role="switch"
+      [attr.aria-checked]="english"
+      [attr.aria-label]="text.englishLanguage"
+      (click)="language.select(english ? 'pt-BR' : 'en-US')"
+    >
+      <span class="language-track" aria-hidden="true">
+        <span>PT</span>
+        <span>EN</span>
+        <img
+          class="language-thumb"
+          [src]="english ? 'assets/flags/us.svg' : 'assets/flags/br.svg'"
+          alt=""
+        />
+      </span>
+    </button>
   </div>
 </div>

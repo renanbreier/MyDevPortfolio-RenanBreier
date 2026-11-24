@@ -1,4 +1,5 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { inject, Component, ChangeDetectionStrategy } from '@angular/core';
+import { LanguageService } from '../../service/language.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,6 +9,8 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   standalone: false,
 })
 export class ContactComponent {
+  readonly language = inject(LanguageService);
+
   name: string = '';
   email: string = '';
   message: string = '';
@@ -18,9 +21,9 @@ export class ContactComponent {
       formData.email === '' ||
       formData.message === ''
     ) {
-      alert('Name, email, and message fields are required!');
+      alert(this.language.text().contactRequired);
       return;
     }
-    alert('Message sent successfully!');
+    alert(this.language.text().contactSuccess);
   }
 }

@@ -1,4 +1,5 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { inject, Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { LanguageService } from '../../service/language.service';
 import { LandingButtonService } from '../../service/landing-button.service';
 import { ButtonComponent } from "../atom/button/button.component";
 
@@ -10,6 +11,8 @@ import { ButtonComponent } from "../atom/button/button.component";
   standalone: false,
 })
 export class AboutComponent {
+  readonly language = inject(LanguageService);
+
   @Input()
   id: string = '';
 

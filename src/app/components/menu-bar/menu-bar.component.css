@@ -132,7 +132,70 @@ button:hover {
   background-color: #828282;
 }
 
-@media (max-width: 1095px) {
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.language-switch:hover {
+  background: transparent;
+}
+
+.language-switch:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.language-track {
+  --thumb-size: 28px;
+  --track-padding: 3px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, var(--thumb-size));
+  justify-content: space-between;
+  align-items: center;
+  width: 76px;
+  height: 36px;
+  padding: var(--track-padding);
+  border: 1px solid #3b82f6;
+  border-radius: inherit;
+  background: #172033;
+  color: #e2e8f0;
+  font: 700 11px/1 Inter, sans-serif;
+  text-align: center;
+}
+
+.language-switch:hover .language-track {
+  background: #233452;
+}
+
+.language-thumb {
+  position: absolute;
+  top: var(--track-padding);
+  left: var(--track-padding);
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 55%);
+  transition: left 180ms ease;
+}
+
+.language-switch[aria-checked="true"] .language-thumb {
+  left: calc(100% - var(--track-padding) - var(--thumb-size));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .language-thumb {
+    transition: none;
+  }
+}
+
+@media (max-width: 1400px) {
   .links > a {
     font-size: 15px;
   }
@@ -156,7 +219,7 @@ button:hover {
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1200px) {
   .links > button {
     display: block;
     width: 150px;
@@ -169,7 +232,7 @@ button:hover {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 760px) {
   .container_contacts {
     flex-direction: column;
     gap: 5px;

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20">
+  <path fill="#fff" d="M0 0h30v20H0z"/>
+  <path fill="#B31942" d="M0 0h30v1.54H0zm0 3.08h30v1.54H0zm0 3.07h30v1.54H0zm0 3.08h30v1.54H0zm0 3.08h30v1.54H0zm0 3.07h30v1.54H0zm0 3.08h30V20H0z"/>
+  <path fill="#0A3161" d="M0 0h13v10.77H0z"/>
+  <defs>
+    <path id="star" fill="#fff" d="m0-.47.11.32h.34L.17.06l.11.32L0 .18l-.28.2.11-.32-.28-.21h.34z"/>
+    <g id="row">
+      <use href="#star" x="1.5"/>
+      <use href="#star" x="3.5"/>
+      <use href="#star" x="5.5"/>
+      <use href="#star" x="7.5"/>
+      <use href="#star" x="9.5"/>
+    </g>
+    <g id="long-row">
+      <use href="#row"/>
+      <use href="#star" x="11.5"/>
+    </g>
+  </defs>
+  <use href="#long-row" y="1.05"/>
+  <use href="#row" x="1" y="2.13"/>
+  <use href="#long-row" y="3.21"/>
+  <use href="#row" x="1" y="4.3"/>
+  <use href="#long-row" y="5.38"/>
+  <use href="#row" x="1" y="6.47"/>
+  <use href="#long-row" y="7.55"/>
+  <use href="#row" x="1" y="8.63"/>
+  <use href="#long-row" y="9.72"/>
+</svg>

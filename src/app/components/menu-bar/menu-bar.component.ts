@@ -1,4 +1,5 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { inject, Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { LanguageService } from '../../service/language.service';
 import { LandingButtonService } from '../../service/landing-button.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { LandingButtonService } from '../../service/landing-button.service';
   standalone: false,
 })
 export class MenuBarComponent {
+  readonly language = inject(LanguageService);
+
   @Input()
   id: string = '';
 

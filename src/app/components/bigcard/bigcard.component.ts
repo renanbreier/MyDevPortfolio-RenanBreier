@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, effect, inject, signal } from '@angular/core';
 import { LandingButtonService } from '../../service/landing-button.service';
+import { LanguageService } from '../../service/language.service';
 
 @Component({
   selector: 'app-bigcard',
@@ -8,53 +9,33 @@ import { LandingButtonService } from '../../service/landing-button.service';
   changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
-export class BigcardComponent implements OnInit {
-  showLinks = false;
+export class BigcardComponent {
+  readonly language = inject(LanguageService);
+  readonly displayedText = signal('');
 
-  // Propriedades para animação de digitação
-  fullText = 'Bem-vindo ao meu portfólio';
-  displayedText = '';
-  typingSpeed = 100;
-  isDeleting = false;
-  loop = true;
+  constructor(private landingButtonService: LandingButtonService) {
+    effect((onCleanup) => {
+      const welcome = this.language.text().welcome;
+      let timer: ReturnType<typeof setTimeout>;
 
-  constructor(private LandingButtonService: LandingButtonService) {}
+      const typeText = (length: number, deleting: boolean): void => {
+        this.displayedText.set(welcome.slice(0, length));
 
-  ngOnInit(): void {
-    this.typeText();
-  }
+        if (length === welcome.length && !deleting) {
+          timer = setTimeout(() => typeText(length - 1, true), 1500);
+        } else if (length === 0 && deleting) {
+          timer = setTimeout(() => typeText(1, false), 500);
+        } else {
+          timer = setTimeout(() => typeText(length + (deleting ? -1 : 1), deleting), deleting ? 50 : 100);
+        }
+      };
 
-  toggleLinks(): void {
-    this.showLinks = !this.showLinks;
+      typeText(1, false);
+      onCleanup(() => clearTimeout(timer));
+    });
   }
 
   scrollToSection(sectionId: string): void {
-    this.LandingButtonService.scrollToSection(sectionId);
-  }
-
-  typeText(i: number = 0): void {
-    if (this.isDeleting) {
-      this.displayedText = this.fullText.substring(0, i - 1);
-      i--;
-    } else {
-      this.displayedText = this.fullText.substring(0, i + 1);
-      i++;
-    }
-
-    const delay = this.isDeleting ? 50 : this.typingSpeed;
-
-    if (!this.isDeleting && i === this.fullText.length) {
-      setTimeout(() => {
-        this.isDeleting = true;
-        this.typeText(i);
-      }, 1500);
-    } else if (this.isDeleting && i === 0) {
-      if (this.loop) {
-        this.isDeleting = false;
-        setTimeout(() => this.typeText(i), 500);
-      }
-    } else {
-      setTimeout(() => this.typeText(i), delay);
-    }
+    this.landingButtonService.scrollToSection(sectionId);
   }
 }

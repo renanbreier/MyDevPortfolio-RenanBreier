@@ -1,9 +1,11 @@
+@let text = language.text();
+@let locale = language.language();
 <section id="jobs" class="timeline-section">
   <div class="header" @fadeInUp>
     <h2 class="title">
-      <span>&lt; Experiência Profissional /&gt;</span>
+      <span>&lt; {{ text.experienceTitle }} /&gt;</span>
     </h2>
-    <p class="subtitle">Minha jornada profissional e as experiências que moldaram minha carreira em tecnologia.</p>
+    <p class="subtitle">{{ text.experienceSubtitle }}</p>
   </div>
 
   <div class="timeline-wrap">
@@ -34,14 +36,14 @@
               class="card"
               [style.--from]="exp.colorFrom"
               [style.--to]="exp.colorTo"
-              title="{{ exp.cargo }} - {{ exp.empresa }}"
+              title="{{ exp.cargo[locale] }} - {{ exp.empresa }}"
             >
               <div class="card-accent" aria-hidden="true"></div>
 
               <div class="card-body">
                 <div class="card-top">
                   @if (exp.atual) {
-                    <div class="badge">Atualmente</div>
+                    <div class="badge">{{ text.currentRole }}</div>
                   }
 
                   <div class="title-row">
@@ -53,7 +55,7 @@
                         <path d="M16 7.5v-1.5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v1.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                     </div>
-                    <h3 class="cargo">{{ exp.cargo }}</h3>
+                    <h3 class="cargo">{{ exp.cargo[locale] }}</h3>
                   </div>
                 </div>
 
@@ -72,11 +74,11 @@
                       <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.2"/>
                       <path d="M16 3v4M8 3v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span class="meta-text">{{ exp.periodo }}</span>
+                    <span class="meta-text">{{ exp.periodo[locale] }}</span>
                   </div>
                 </div>
 
-                <p class="desc">{{ exp.descricao }}</p>
+                <p class="desc">{{ exp.descricao[locale] }}</p>
               </div>
             </article>
           </div>

@@ -1,6 +1,6 @@
 :host {
   display: block;
-  color: #111827;
+  color: var(--portfolio-text);
   padding: 4.5rem 1.5rem;
   box-sizing: border-box;
   font-family: Inter, sans-serif;
@@ -16,13 +16,14 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  background: #3b82f6;
+  background: var(--portfolio-gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-  color: #8892b0;
+  color: var(--portfolio-muted);
   max-width: 800px;
   margin: 0 auto;
   font-size: 1rem;
@@ -45,8 +46,8 @@
   top: 0;
   bottom: 0;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(37,99,235,0.9), rgba(6,182,212,0.9));
-  opacity: 0.08;
+  background: linear-gradient(var(--portfolio-blue), var(--portfolio-cyan), transparent);
+  opacity: 0.45;
   box-shadow: inset 0 0 20px rgba(6,182,212,0.02);
 }
 
@@ -84,7 +85,7 @@
   inset: -8px;
   border-radius: 50%;
   display: block;
-  animation: pulse 2000ms ease-in-out infinite;
+  animation: pulse 1500ms ease-in-out 3;
   background: radial-gradient(circle at center, rgba(6,182,212,0.55), rgba(6,182,212,0.18) 30%, transparent 60%);
   z-index: -1;
 }
@@ -114,8 +115,10 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.03);
-  background: linear-gradient(180deg, rgba(18,22,34,0.85), rgba(10,12,20,0.8));
+  border: 1px solid var(--portfolio-line);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--from) 15%, transparent), transparent 72%),
+    var(--portfolio-panel);
   box-shadow: 0 8px 28px rgba(2,6,23,0.6);
   padding: 1.6rem;
   transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease;
@@ -123,26 +126,16 @@
   --to: #06b6d4;
 }
 
-/* Glow border effect (copied from project-card / featured-card) */
-.card::before {
-  content: '';
+.card-accent {
   position: absolute;
-  inset: -1px;
+  inset: 0 0 auto;
+  height: 3px;
   background: linear-gradient(90deg, var(--from), var(--to));
-  opacity: 0;
-  filter: blur(22px);
-  transition: opacity 300ms ease;
-  z-index: -1;
 }
 
-/* Hover effect identical to second CSS */
 .card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 14px 40px rgba(2,6,23,0.7);
-}
-
-.card:hover::before {
-  opacity: 0.14;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--from) 24%, transparent);
 }
 
 /* card body content */
@@ -159,8 +152,8 @@
 
 .badge {
   display: inline-block;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
-  color: white;
+  background: var(--portfolio-gradient);
+  color: var(--portfolio-ink);
   padding: 0.25rem 0.6rem;
   border-radius: 999px;
   font-weight: 700;
@@ -198,8 +191,9 @@
 /* meta row */
 .meta {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem 1rem;
   align-items: center;
+  flex-wrap: wrap;
   margin: 1rem 0;
   color: #9aa5c6;
   font-size: 0.92rem;
@@ -214,7 +208,7 @@
 
 /* description */
 .desc {
-  color: #8892b0;
+  color: var(--portfolio-muted);
   line-height: 1.6;
   margin-bottom: 0.2rem;
   font-size: 0.95rem;
@@ -254,7 +248,7 @@
     left: 20px;
     transform: none;
     width: 3px;
-    opacity: 0.06;
+    opacity: 0.45;
   }
 
   .timeline-point {
@@ -269,9 +263,6 @@
     padding-left: 48px;
   }
 
-  .card {
-    margin-left: 48px;
-  }
 }
 
 @media (max-width: 520px) {

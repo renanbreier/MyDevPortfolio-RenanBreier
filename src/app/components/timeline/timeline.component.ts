@@ -1,78 +1,15 @@
-import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  inject,
-  OnDestroy,
-  QueryList,
-  ViewChildren,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LanguageService } from '../../service/language.service';
-import {
-  animate,
-  style,
-  transition,
-  trigger,
-  state,
-} from '@angular/animations';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.css'],
-  animations: [
-    trigger('slideIn', [
-      state(
-        'hidden',
-        style({
-          opacity: 0,
-          transform: 'translateX(0)',
-        })
-      ),
-      state(
-        'left',
-        style({
-          opacity: 1,
-          transform: 'translateX(0)',
-        })
-      ),
-      state(
-        'right',
-        style({
-          opacity: 1,
-          transform: 'translateX(0)',
-        })
-      ),
-      transition('hidden => left', [
-        style({ opacity: 0, transform: 'translateX(-50px)' }),
-        animate('600ms cubic-bezier(.2,.9,.2,1)'),
-      ]),
-      transition('hidden => right', [
-        style({ opacity: 0, transform: 'translateX(50px)' }),
-        animate('600ms cubic-bezier(.2,.9,.2,1)'),
-      ]),
-    ]),
-
-    // Header fade-in up
-    trigger('fadeInUp', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(30px)' }),
-        animate('600ms cubic-bezier(.2,.9,.2,1)'),
-      ]),
-    ]),
-  ],
   changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
-export class TimelineComponent implements AfterViewInit, OnDestroy {
+export class TimelineComponent {
   readonly language = inject(LanguageService);
-
-  inView = new Set<number>();
-  private observer?: IntersectionObserver;
-
-  @ViewChildren('cardRefs', { read: ElementRef })
-  cardRefs!: QueryList<ElementRef<HTMLElement>>;
 
   experiences = [
     {
@@ -149,50 +86,7 @@ export class TimelineComponent implements AfterViewInit, OnDestroy {
     },
   ];
 
-  ngAfterViewInit(): void {
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const indexAttr = entry.target.getAttribute('data-index');
-          if (!indexAttr) return;
-          const idx = Number(indexAttr);
-          if (entry.isIntersecting) {
-            this.inView.add(idx);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: '0px 0px -10% 0px',
-        threshold: 0.25,
-      }
-    );
-
-    this.cardRefs.forEach((el) => {
-      const native = el.nativeElement;
-      this.observer?.observe(native);
-    });
-
-    this.cardRefs.changes.subscribe((ql) => {
-      ql.forEach((el: { nativeElement: any; }) => {
-        const native = el.nativeElement;
-        this.observer?.observe(native);
-      });
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.observer?.disconnect();
-  }
-
-  isLeft(index: number) {
+  isLeft(index: number): boolean {
     return index % 2 === 0;
-  }
-
-  slideState(index: number) {
-    if (this.inView.has(index)) {
-      return this.isLeft(index) ? 'left' : 'right';
-    }
-    return 'hidden';
   }
 }

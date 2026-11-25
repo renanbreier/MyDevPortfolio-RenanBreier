@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 80px;
+  padding: 1rem 0 5rem;
+  background: radial-gradient(ellipse at 50% 100%, #155fa43d, transparent 70%);
 }
 
 .text {
@@ -11,11 +12,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 0 1rem 1.25rem;
+  text-align: center;
 }
 
 .text > h1 {
-  color: #fff;
+  color: var(--portfolio-blue);
   font-family: "Roboto Mono";
   padding-bottom: 10px;
 }
@@ -23,7 +25,7 @@
 .text > p {
   color: #fff;
   font-family: Roboto;
-  font-weight: 100;
+  color: var(--portfolio-muted);
 }
 
 .container_body {
@@ -32,10 +34,10 @@
   align-items: center;
   flex-wrap: wrap;
   width: 720px;
-  background-color: #363535;
-  border: 2px solid rgb(59 130 246);
+  background: linear-gradient(145deg, var(--portfolio-panel-raised), var(--portfolio-panel));
+  border: 1px solid var(--portfolio-line);
   border-radius: 13px;
-  box-shadow: -9px 7px 27px 0px rgba(41, 41, 41, 0.75);
+  box-shadow: 0 12px 42px #02091660;
 }
 
 .container_form > form {
@@ -73,7 +75,9 @@ input:focus {
   font-family: "Roboto Mono";
   font-size: 15px;
   color: #cccccc;
-  outline: none;
+  border-color: var(--portfolio-cyan);
+  outline: 1px solid var(--portfolio-cyan);
+  outline-offset: 4px;
   background: transparent;
 }
 
@@ -97,7 +101,9 @@ textarea::placeholder {
 }
 
 textarea:focus {
-  outline: none;
+  border-color: var(--portfolio-cyan);
+  outline: 1px solid var(--portfolio-cyan);
+  outline-offset: 4px;
   font-family: "Roboto Mono";
   font-size: 15px;
   color: #cccccc;
@@ -108,9 +114,10 @@ button {
   height: 50px;
   margin: 20px;
   border-radius: 13px;
-  border: 2px solid #3b82f6;
-  background-color: transparent;
-  color: #fff;
+  border: 0;
+  background: var(--portfolio-gradient);
+  color: var(--portfolio-ink);
+  transition: transform 180ms ease, box-shadow 180ms ease;
   font-family: Roboto Mono;
   font-size: 20px;
   font-style: normal;
@@ -120,7 +127,8 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: #828282;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px #369eff50;
 }
 
 @media (max-width: 800px) {

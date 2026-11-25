@@ -1,9 +1,9 @@
 @let text = language.text();
 @let locale = language.language();
-<section id="section3" class="projects-section" [@listStagger]>
+<section id="section3" class="projects-section">
   <div class="container">
     <!-- Header -->
-    <div class="header" @fadeInUp>
+    <div class="header portfolio-reveal">
       <h2 class="title">&lt; {{ text.projectsTitle }} /&gt;</h2>
       <p class="subtitle">
         {{ text.projectsSubtitle }}
@@ -11,9 +11,9 @@
     </div>
 
     <!-- Featured project -->
-    <div class="featured-wrap" @cardEnter>
+    <div class="featured-wrap">
       <div
-        class="featured-card"
+        class="featured-card portfolio-reveal"
         [style.--from]="featuredProject.colorFrom"
         [style.--to]="featuredProject.colorTo"
       >
@@ -71,13 +71,9 @@
     <div class="grid">
       @for (project of otherProjects; track project.id) {
         <article
-          class="project-card"
-          [class.hovered]="hoveredProject === project.id"
-          (mouseenter)="onEnter(project.id)"
-          (mouseleave)="onLeave()"
+          class="project-card portfolio-reveal"
           [style.--from]="project.colorFrom"
           [style.--to]="project.colorTo"
-          @cardEnter
         >
           <div class="card-top">
             <div class="card-image">

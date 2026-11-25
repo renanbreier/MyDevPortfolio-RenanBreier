@@ -1,13 +1,5 @@
 import { inject, Component, ChangeDetectionStrategy } from '@angular/core';
 import { LanguageService, Localized } from '../../service/language.service';
-import {
-  trigger,
-  transition,
-  style,
-  animate,
-  query,
-  stagger,
-} from '@angular/animations';
 
 interface Project {
   id: number;
@@ -24,49 +16,11 @@ interface Project {
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
-  animations: [
-    // Container entrance with staggered children
-    trigger('listStagger', [
-      transition(':enter', [
-        query(
-          '.project-card, .featured-card',
-          [
-            style({ opacity: 0, transform: 'translateY(30px)' }),
-            stagger(80, [
-              animate(
-                '480ms cubic-bezier(.2,.8,.2,1)',
-                style({ opacity: 1, transform: 'translateY(0)' })
-              ),
-            ]),
-          ],
-          { optional: true }
-        ),
-      ]),
-    ]),
-
-    // Fade/slide for header
-    trigger('fadeInUp', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(20px)' }),
-        animate('600ms 0ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
-    ]),
-
-    // Simple card enter for individually inserted cards (optional)
-    trigger('cardEnter', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(20px)' }),
-        animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
-    ]),
-  ],
   changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ProjectsComponent {
   readonly language = inject(LanguageService);
-
-  hoveredProject: number | null = null;
 
   projects: Project[] = [
     {
@@ -189,13 +143,5 @@ export class ProjectsComponent {
 
   get otherProjects(): Project[] {
     return this.projects.slice(1);
-  }
-
-  onEnter(projectId: number) {
-    this.hoveredProject = projectId;
-  }
-
-  onLeave() {
-    this.hoveredProject = null;
   }
 }

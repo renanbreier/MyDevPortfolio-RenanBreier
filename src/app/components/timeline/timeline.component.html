@@ -1,7 +1,7 @@
 @let text = language.text();
 @let locale = language.language();
 <section id="jobs" class="timeline-section">
-  <div class="header" @fadeInUp>
+  <div class="header portfolio-reveal">
     <h2 class="title">
       <span>&lt; {{ text.experienceTitle }} /&gt;</span>
     </h2>
@@ -13,12 +13,7 @@
 
     <div class="items">
       @for (exp of experiences; track exp; let i = $index) {
-        <div
-          class="item"
-          [attr.data-index]="i"
-          #cardRefs
-          [@slideIn]="slideState(i)"
-        >
+        <div class="item">
           <div
             class="timeline-point"
             [ngStyle]="{
@@ -33,7 +28,7 @@
 
           <div class="card-wrapper" [class.left]="isLeft(i)" [class.right]="!isLeft(i)">
             <article
-              class="card"
+              class="card portfolio-reveal"
               [style.--from]="exp.colorFrom"
               [style.--to]="exp.colorTo"
               title="{{ exp.cargo[locale] }} - {{ exp.empresa }}"

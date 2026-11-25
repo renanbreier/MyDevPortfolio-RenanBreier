@@ -2,17 +2,17 @@
 @let locale = language.language();
 <section id="section4" class="skills-section">
   <div class="content-wrapper">
-    <div class="header">
+    <div class="header portfolio-reveal">
       <h2 class="title">&lt; {{ text.skillsTitle }} /&gt;</h2>
       <p class="subtitle">
         {{ text.skillsSubtitle }}
       </p>
     </div>
 
-    <div class="grid" @listAnimation>
+    <div class="grid">
       @for (skill of skillsList; track skill) {
         <div
-          class="skill-card"
+          class="skill-card portfolio-reveal"
           [style.--from]="skill.gradientFrom"
           [style.--to]="skill.gradientTo"
         >

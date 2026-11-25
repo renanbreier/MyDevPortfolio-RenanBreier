@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px;
-  margin-bottom: 80px;
+  border-bottom: 1px solid var(--portfolio-line);
+  background: var(--portfolio-panel);
   font-family: Inter,sans-serif
 }
 
@@ -12,11 +13,10 @@
   display: flex;
   flex-direction: row;
   padding: 10px;
-  animation: slide-r 1s ease-out;
 }
 
 .title1 {
-  color: #828282;
+  color: var(--portfolio-blue);
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -40,7 +40,6 @@
   justify-content: center;
   gap: 20px;
   padding: 10px;
-  animation: slide-l 1s ease-out;
 }
 
 .icons {
@@ -61,7 +60,7 @@
   width: 200px;
   height: 50px;
   border-radius: 13px;
-  border: 2px solid rgb(59 130 246);
+  border: 2px solid var(--portfolio-blue);
   background-color: transparent;
   color: #fff;
   font-size: 20px;
@@ -79,11 +78,11 @@
 }
 
 ::ng-deep .mat-mdc-menu-item-text > a:hover {
-  color: rgb(59 130 246);
+  color: var(--portfolio-blue);
 }
 
 ::ng-deep .mat-mdc-menu-content {
-  background-color: #828282;
+  background-color: var(--portfolio-panel-raised);
 }
 
 .links > a {
@@ -95,14 +94,14 @@
 }
 
 .links > a:hover {
-  color: rgb(59 130 246);
+  color: var(--portfolio-blue);
 }
 
 .contact > button {
   width: 200px;
   height: 50px;
   border-radius: 13px;
-  border: 2px solid rgb(59 130 246);
+  border: 2px solid var(--portfolio-blue);
   background-color: transparent;
 }
 
@@ -129,7 +128,7 @@
 
 button:hover {
   cursor: pointer;
-  background-color: #828282;
+  background-color: var(--portfolio-panel-raised);
 }
 
 .language-switch {
@@ -161,16 +160,16 @@ button:hover {
   width: 76px;
   height: 36px;
   padding: var(--track-padding);
-  border: 1px solid #3b82f6;
+  border: 1px solid var(--portfolio-line);
   border-radius: inherit;
-  background: #172033;
+  background: var(--portfolio-bg);
   color: #e2e8f0;
   font: 700 11px/1 Inter, sans-serif;
   text-align: center;
 }
 
 .language-switch:hover .language-track {
-  background: #233452;
+  background: var(--portfolio-panel-raised);
 }
 
 .language-thumb {
@@ -240,6 +239,22 @@ button:hover {
 }
 
 @media (max-width: 560px) {
+  .container_header {
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .title_container,
+  .container_contacts {
+    padding: 0;
+  }
+
+  .links > button,
+  .contact > button {
+    width: 120px;
+  }
+
   .title1,
   .title2 {
     font-size: 12px;
@@ -267,20 +282,23 @@ button:hover {
   }
 }
 
-@keyframes slide-r {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.links > a {
+  position: relative;
+  padding-block: 0.35rem;
+  transition: color 180ms ease;
 }
 
-@keyframes slide-l {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.links > a::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: var(--portfolio-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.links > a:is(:hover, :focus-visible)::after {
+  transform: scaleX(1);
 }

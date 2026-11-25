@@ -16,22 +16,32 @@ export class BigcardComponent {
   constructor(private landingButtonService: LandingButtonService) {
     effect((onCleanup) => {
       const welcome = this.language.text().welcome;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (reducedMotion.matches) {
+        this.displayedText.set(welcome);
+        return;
+      }
+
+      let length = 0;
       let timer: ReturnType<typeof setTimeout>;
-
-      const typeText = (length: number, deleting: boolean): void => {
+      const finishTyping = () => {
+        clearTimeout(timer);
+        this.displayedText.set(welcome);
+      };
+      const typeNextCharacter = () => {
+        length += 1;
         this.displayedText.set(welcome.slice(0, length));
-
-        if (length === welcome.length && !deleting) {
-          timer = setTimeout(() => typeText(length - 1, true), 1500);
-        } else if (length === 0 && deleting) {
-          timer = setTimeout(() => typeText(1, false), 500);
-        } else {
-          timer = setTimeout(() => typeText(length + (deleting ? -1 : 1), deleting), deleting ? 50 : 100);
+        if (length < welcome.length) {
+          timer = setTimeout(typeNextCharacter, 55);
         }
       };
 
-      typeText(1, false);
-      onCleanup(() => clearTimeout(timer));
+      typeNextCharacter();
+      reducedMotion.addEventListener('change', finishTyping);
+      onCleanup(() => {
+        clearTimeout(timer);
+        reducedMotion.removeEventListener('change', finishTyping);
+      });
     });
   }
 

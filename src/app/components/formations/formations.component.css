@@ -24,31 +24,33 @@ h2::after {
   display: block;
   width: 50%;
   height: 4px;
-  background-color: #3b82f6; /* Azul usado no seu portfólio */
+  background: var(--portfolio-gradient);
   margin-top: 8px;
 }
 
 /* Grid que organiza os cards */
 .formations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 1.5rem; /* Espaçamento entre os cards */
   margin-top: 2.5rem;
 }
 
 /* Estilo individual de cada card */
 .formation-card {
-  background-color: #112240; /* Cor de fundo do card, um pouco mais clara */
+  background: linear-gradient(145deg, var(--portfolio-panel-raised), var(--portfolio-panel));
+  border: 1px solid var(--portfolio-line);
   padding: 2rem;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .formation-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+  border-color: var(--portfolio-blue);
+  box-shadow: 0 10px 30px #227dff24;
 }
 
 /* Cabeçalho do card (ícone e ponto) */
@@ -70,7 +72,7 @@ h2::after {
 /* Ícone dentro do círculo */
 .icon i {
   font-size: 1.75rem;
-  color: #3b82f6;
+  color: var(--portfolio-cyan);
 }
 
 /* Ponto branco no canto superior direito */

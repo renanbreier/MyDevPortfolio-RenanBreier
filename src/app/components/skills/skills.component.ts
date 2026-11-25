@@ -1,13 +1,5 @@
 import { inject, Component, ChangeDetectionStrategy } from '@angular/core';
 import { LanguageService, Localized } from '../../service/language.service';
-import {
-  trigger,
-  style,
-  animate,
-  transition,
-  query,
-  stagger,
-} from '@angular/animations';
 
 interface Skill {
   name: string;
@@ -22,18 +14,6 @@ interface Skill {
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css'],
-  animations: [
-    trigger('listAnimation', [
-      transition(':enter', [
-        query('.skill-card', [
-          style({ opacity: 0, transform: 'translateY(50px)' }),
-          stagger(100, [
-            animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-          ]),
-        ], { optional: true })
-      ])
-    ]),
-  ],
   changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })

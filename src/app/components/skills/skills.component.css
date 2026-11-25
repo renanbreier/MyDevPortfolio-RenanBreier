@@ -6,7 +6,7 @@
 .skills-section {
   position: relative;
   padding: 2rem;
-  overflow: hidden;
+  background: radial-gradient(ellipse at 15% 45%, #16559b30, transparent 60%);
 }
 
 .background-gradient {
@@ -31,14 +31,15 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  background: #3b82f6;
+  background: var(--portfolio-gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
   font-size: 1.125rem;
-  color: rgb(248 250 252);
+  color: var(--portfolio-muted);
   max-width: 640px;
   margin: 0 auto;
 }
@@ -61,13 +62,15 @@
 }
 
 .skill-card {
-  background: #0d1117;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--from) 15%, transparent), transparent 72%),
+    var(--portfolio-panel);
   border-radius: 12px;
   padding: 1.25rem;
   text-align: left;
   position: relative;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  transition: transform 250ms ease, box-shadow 250ms ease;
+  border: 1px solid var(--portfolio-line);
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
   cursor: default;
 
   /* variáveis padrão */
@@ -77,23 +80,17 @@
 
 .skill-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.10);
+  border-color: color-mix(in srgb, var(--to) 76%, var(--portfolio-blue));
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--from) 24%, transparent);
 }
 
 .skill-card::before {
   content: '';
   position: absolute;
-  inset: -2px;
-  background: linear-gradient(90deg, var(--from), var(--to));
-  z-index: -1;
-  opacity: 0;
-  filter: blur(18px);
-  border-radius: 14px;
-  transition: opacity 350ms ease;
-}
-
-.skill-card:hover::before {
-  opacity: 0.15;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(var(--from), var(--to));
+  border-radius: 12px 0 0 12px;
 }
 
 .icon-wrapper {
@@ -115,7 +112,7 @@
 }
 
 .skill-desc {
-  color: #8892b0;
+  color: var(--portfolio-muted);
   font-size: 0.9rem;
   margin-top: 0.4rem;
 }

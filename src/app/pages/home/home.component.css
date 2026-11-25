@@ -2,9 +2,10 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: rgb(59 130 246);
+  z-index: 40;
+  background-color: #245aab;
+  border: 1px solid var(--portfolio-line);
   color: #fff;
-  border: none;
   padding: 10px;
   border-radius: 50px;
   cursor: pointer;

@@ -1,46 +1,47 @@
 @let text = language.text();
-<div class="container" id="section5">
-  <div class="text portfolio-reveal">
-    <h1>{{ text.contactTitle }}</h1>
+<section id="section5" aria-labelledby="contact-title">
+  <header class="portfolio-reveal">
+    <h2 id="contact-title">&lt; {{ text.contact }} /&gt;</h2>
+    <h3>{{ text.contactHeadline }} <span class="portfolio-text-accent">{{ text.contactHighlight }}</span></h3>
     <p>{{ text.contactSubtitle }}</p>
-  </div>
-  <div class="container_body">
-    <div class="container_form">
-      <form #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective.value)">
-        <div class="form_data">
-          <div class="name">
-            <input
-              type="text"
-              name="name"
-              [(ngModel)]="name"
-              [placeholder]="text.contactName"
-              [attr.aria-label]="text.contactName"
-              required
-            />
-          </div>
-          <div class="email">
-            <input
-              type="email"
-              name="email"
-              [(ngModel)]="email"
-              [placeholder]="text.contactEmail"
-              [attr.aria-label]="text.contactEmail"
-              required
-            />
-          </div>
-        </div>
-        <div class="form_text-area">
-          <textarea
-            name="message"
-            [(ngModel)]="message"
-            [placeholder]="text.contactMessage"
-            [attr.aria-label]="text.contactMessage"
-            rows="10"
-            required
-          ></textarea>
-        </div>
-        <button type="submit">{{ text.contactSend }}</button>
-      </form>
-    </div>
-  </div>
-</div>
+  </header>
+
+  <button class="email-button" type="button" (click)="copyEmail()"
+    [attr.aria-label]="text.copyEmail + ' — ' + email" [title]="text.copyEmail">
+    <span>{{ email }}</span>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <rect x="8" y="8" width="12" height="13" rx="2"/>
+      <path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>
+    </svg>
+  </button>
+  <p class="copy-feedback" role="status">
+    @if (copyResult() === true) {
+      {{ text.emailCopied }}
+    } @else if (copyResult() === false) {
+      {{ text.copyEmailFailed }}
+    }
+  </p>
+
+  <ul class="profiles">
+    <li>
+      <a href="https://www.instagram.com/renan.breier/">
+        <img src="assets/icons/instagram.png" width="18" height="18" alt="">Instagram
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/renanbreier/">
+        <img src="assets/icons/linkedin_icon.svg" width="18" height="18" alt="">LinkedIn
+      </a>
+    </li>
+    <li>
+      <a [href]="'mailto:' + email">
+        <img src="assets/email_send.svg" width="18" height="18" alt="">{{ text.emailLabel }}
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/renanbreier">
+        <img src="assets/projects/git2.svg" width="18" height="18" alt="">GitHub
+      </a>
+    </li>
+  </ul>
+</section>

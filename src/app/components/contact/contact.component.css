@@ -1,202 +1,113 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 0 5rem;
-  background: radial-gradient(ellipse at 50% 100%, #155fa43d, transparent 70%);
+:host {
+  display: block;
+  padding: 4.5rem 1.5rem 6rem;
+  font-family: Inter, sans-serif;
+  color: var(--portfolio-text);
 }
 
-.text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 1rem 1.25rem;
+section {
+  max-width: 48rem;
+  margin-inline: auto;
   text-align: center;
 }
 
-.text > h1 {
-  color: var(--portfolio-blue);
-  font-family: "Roboto Mono";
-  padding-bottom: 10px;
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  background: var(--portfolio-gradient);
+  background-clip: text;
+  color: transparent;
 }
 
-.text > p {
-  color: #fff;
-  font-family: Roboto;
+h3 {
+  max-width: 22ch;
+  margin: 0 auto 1rem;
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  line-height: 1.06;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+h3 span {
+  display: block;
+}
+
+header p {
   color: var(--portfolio-muted);
+  line-height: 1.6;
+  text-wrap: balance;
 }
 
-.container_body {
-  display: flex;
+.email-button,
+.profiles a {
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  width: 720px;
-  background: linear-gradient(145deg, var(--portfolio-panel-raised), var(--portfolio-panel));
-  border: 1px solid var(--portfolio-line);
-  border-radius: 13px;
-  box-shadow: 0 12px 42px #02091660;
+  gap: 0.625rem;
+  min-height: 2.75rem;
+  border-radius: 0.625rem;
+  font-weight: 600;
 }
 
-.container_form > form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.form_data {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 50px;
-  padding: 30px;
-}
-
-input {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #cccccc;
-  width: 250px;
-  font-family: "Roboto Mono";
-  font-size: 15px;
-  color: #cccccc;
-}
-
-input::placeholder {
-  font-family: "Roboto Mono";
-  font-size: 15px;
-}
-
-input:focus {
-  font-family: "Roboto Mono";
-  font-size: 15px;
-  color: #cccccc;
-  border-color: var(--portfolio-cyan);
-  outline: 1px solid var(--portfolio-cyan);
-  outline-offset: 4px;
-  background: transparent;
-}
-
-.form_text-area > textarea {
-  width: 600px;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  resize: none;
-  background: transparent;
-  border: 2px solid #cccccc;
-  border-radius: 13px;
-  font-family: "Roboto Mono";
-  font-size: 15px;
-  color: #cccccc;
-}
-
-textarea::placeholder {
-  font-family: "Roboto Mono";
-  font-size: 15px;
-}
-
-textarea:focus {
-  border-color: var(--portfolio-cyan);
-  outline: 1px solid var(--portfolio-cyan);
-  outline-offset: 4px;
-  font-family: "Roboto Mono";
-  font-size: 15px;
-  color: #cccccc;
-}
-
-button {
-  width: 200px;
-  height: 50px;
-  margin: 20px;
-  border-radius: 13px;
+.email-button {
+  max-width: 100%;
+  margin-top: 2rem;
+  padding: 0.9rem 1.2rem;
   border: 0;
   background: var(--portfolio-gradient);
   color: var(--portfolio-ink);
-  transition: transform 180ms ease, box-shadow 180ms ease;
-  font-family: Roboto Mono;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-button:hover {
+  font-family: inherit;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  overflow-wrap: anywhere;
   cursor: pointer;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px #369eff50;
 }
 
-@media (max-width: 800px) {
-  .container_body {
-    width: 600px;
-  }
-  .form_data > .name > input,
-  .form_data > .email > input {
-    width: 200px;
-  }
-
-  .form_text-area > textarea {
-    width: 500px;
-  }
+.email-button svg {
+  flex: none;
 }
 
-@media (max-width: 650px) {
-  .container_body {
-    width: 500px;
-  }
-
-  .form_data {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .form_data > .name > input,
-  .form_data > .email > input {
-    width: 250px;
-  }
-
-  .form_text-area > textarea {
-    width: 400px;
-  }
+.email-button:hover {
+  box-shadow: 0 0 0 2px var(--portfolio-cyan);
 }
 
-@media (max-width: 550px) {
-  .container_body {
-    width: 400px;
-  }
-
-  .form_text-area > textarea {
-    width: 300px;
-  }
+.copy-feedback {
+  min-height: 1.5rem;
+  margin: 0.4rem 0;
+  color: var(--portfolio-muted);
+  font-size: 0.875rem;
 }
 
-@media (max-width: 450px) {
-  .container_body {
-    width: 300px;
-  }
-
-  .form_data > .name > input,
-  .form_data > .email > input {
-    width: 180px;
-  }
-
-  .form_text-area > textarea {
-    width: 200px;
-  }
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  max-width: 35rem;
+  margin-inline: auto;
+  list-style: none;
 }
 
-@media (max-width: 360px) {
-  .text > h1 {
-    font-size: 25px;
+.profiles a {
+  width: 100%;
+  padding: 0.6rem;
+  background: var(--portfolio-panel);
+  border: 1px solid var(--portfolio-line);
+  color: var(--portfolio-text);
+  text-decoration: none;
+}
+
+.profiles a:hover,
+.profiles a:focus-visible {
+  border-color: var(--portfolio-cyan);
+  color: var(--portfolio-cyan);
+}
+
+@media (max-width: 520px) {
+  :host {
+    padding: 3rem 1rem 5rem;
   }
 
-  .text > p {
-    font-size: 15px;
+  .profiles {
+    max-width: 22rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

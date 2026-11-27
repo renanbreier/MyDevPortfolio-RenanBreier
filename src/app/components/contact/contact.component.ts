@@ -1,4 +1,5 @@
-import { inject, Component, ChangeDetectionStrategy } from '@angular/core';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { LanguageService } from '../../service/language.service';
 
 @Component({
@@ -10,20 +11,11 @@ import { LanguageService } from '../../service/language.service';
 })
 export class ContactComponent {
   readonly language = inject(LanguageService);
+  readonly email = 'renanoliveirabreier@gmail.com';
+  readonly copyResult = signal<boolean | null>(null);
+  private readonly clipboard = inject(Clipboard);
 
-  name: string = '';
-  email: string = '';
-  message: string = '';
-
-  onSubmit(formData: any) {
-    if (
-      formData.name === '' ||
-      formData.email === '' ||
-      formData.message === ''
-    ) {
-      alert(this.language.text().contactRequired);
-      return;
-    }
-    alert(this.language.text().contactSuccess);
+  copyEmail(): void {
+    this.copyResult.set(this.clipboard.copy(this.email));
   }
 }

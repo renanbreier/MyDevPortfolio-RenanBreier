@@ -80,13 +80,6 @@
   text-wrap: balance;
 }
 
-.titulo > span {
-  color: var(--portfolio-blue);
-  background: var(--portfolio-gradient);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .button-icons-container {
   display: flex;
   align-items: center;

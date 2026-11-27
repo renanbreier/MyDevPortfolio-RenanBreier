@@ -69,7 +69,7 @@
   height: 0.12em;
   margin-left: 0.4em;
   background: currentColor;
-  animation: caret-blink 700ms step-end 5;
+  animation: caret-blink 700ms step-end infinite;
 }
 
 .bigCard_text > .titulo {

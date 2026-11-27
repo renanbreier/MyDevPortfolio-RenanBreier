@@ -17,30 +17,35 @@ export class BigcardComponent {
     effect((onCleanup) => {
       const welcome = this.language.text().welcome;
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (reducedMotion.matches) {
-        this.displayedText.set(welcome);
-        return;
-      }
-
-      let length = 0;
       let timer: ReturnType<typeof setTimeout>;
-      const finishTyping = () => {
-        clearTimeout(timer);
-        this.displayedText.set(welcome);
-      };
-      const typeNextCharacter = () => {
-        length += 1;
+      const typeText = (length: number, deleting: boolean): void => {
         this.displayedText.set(welcome.slice(0, length));
-        if (length < welcome.length) {
-          timer = setTimeout(typeNextCharacter, 55);
+
+        if (length === welcome.length) {
+          timer = setTimeout(() => typeText(length - 1, true), 1500);
+        } else if (length === 0) {
+          timer = setTimeout(() => typeText(1, false), 500);
+        } else if (deleting) {
+          timer = setTimeout(() => typeText(length - 1, true), 50);
+        } else {
+          timer = setTimeout(() => typeText(length + 1, false), 100);
         }
       };
 
-      typeNextCharacter();
-      reducedMotion.addEventListener('change', finishTyping);
+      const updateAnimation = () => {
+        clearTimeout(timer);
+        if (reducedMotion.matches) {
+          this.displayedText.set(welcome);
+        } else {
+          typeText(1, false);
+        }
+      };
+
+      updateAnimation();
+      reducedMotion.addEventListener('change', updateAnimation);
       onCleanup(() => {
         clearTimeout(timer);
-        reducedMotion.removeEventListener('change', finishTyping);
+        reducedMotion.removeEventListener('change', updateAnimation);
       });
     });
   }

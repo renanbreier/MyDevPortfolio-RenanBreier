@@ -1,25 +1,26 @@
 @let text = language.text();
 @let locale = language.language();
-<section class="formations-container" id="section6">
-  <h2>{{ text.educationTitle }}</h2>
-  <div class="formations-grid">
-    @for (formation of formations; track formation) {
-      <div class="formation-card portfolio-reveal">
-        <div class="card-header">
-          <div class="icon">
-            <i [class]="formation.icon"></i>
+<section id="section6" aria-labelledby="education-title">
+  <header class="header portfolio-reveal">
+    <h2 id="education-title">&lt; {{ text.educationTitle }} /&gt;</h2>
+  </header>
+
+  <div class="organizations">
+    <article class="organization">
+      <header class="organization-header">
+        <img class="organization-logo" src="assets/education/ifsp.jpeg" width="56" height="56" alt="" loading="lazy">
+        <h3>{{ degree.institution }} (IFSP)</h3>
+      </header>
+
+      <ol class="entries">
+        <li class="entry">
+          <div class="entry-heading">
+            <h4>{{ degree.title[locale] }}</h4>
           </div>
-          <div class="dot"></div>
-        </div>
-        <div class="card-body">
-          <h3>{{ formation.title[locale] }}</h3>
-          <div class="info">
-            <span class="institution">{{ formation.institution }}</span>
-            <span class="period">{{ formation.period }}</span>
-          </div>
-          <p>{{ formation.description[locale] }}</p>
-        </div>
-      </div>
-    }
+          <p class="period">{{ degree.period }}</p>
+          <p class="description">{{ degree.description[locale] }}</p>
+        </li>
+      </ol>
+    </article>
   </div>
 </section>

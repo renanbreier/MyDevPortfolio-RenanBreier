@@ -1,34 +1,36 @@
 @let text = language.text();
 @let locale = language.language();
-<section id="jobs" aria-labelledby="experience-title">
-  <header class="header portfolio-reveal">
-    <h2 id="experience-title">&lt; {{ text.experienceTitle }} /&gt;</h2>
-    <p>{{ text.experienceSubtitle }}</p>
-  </header>
+<section class="portfolio-section" id="jobs" aria-labelledby="experience-title">
+  <div class="shell resume-layout">
+    <header class="section-heading portfolio-reveal">
+      <h2 id="experience-title">{{ text.experienceTitle }}</h2>
+      <p>{{ text.experienceSubtitle }}</p>
+    </header>
 
-  <div class="organizations">
-    @for (company of companies; track company.name) {
-      <article class="organization">
-        <header class="organization-header">
-          <img class="organization-logo" [src]="company.logo" width="56" height="56" alt="" loading="lazy">
-          <h3>{{ company.name }}</h3>
-        </header>
+    <div class="organizations">
+      @for (company of companies; track company.name) {
+        <article class="organization surface portfolio-reveal">
+          <header class="organization-header">
+            <img class="organization-logo" [src]="company.logo" width="56" height="56" alt="" loading="lazy">
+            <h3>{{ company.name }}</h3>
+          </header>
 
-        <ol class="entries">
-          @for (role of company.roles; track role) {
-            <li class="entry" [class.current]="role.atual">
-              <div class="entry-heading">
-                <h4>{{ role.cargo }}</h4>
-                @if (role.atual) {
-                  <span class="badge">{{ text.currentRole }}</span>
-                }
-              </div>
-              <p class="period">{{ role.periodo[locale] }}</p>
-              <p class="description">{{ role.descricao[locale] }}</p>
-            </li>
-          }
-        </ol>
-      </article>
-    }
+          <ol class="entries">
+            @for (role of company.roles; track role) {
+              <li class="entry" [class.current]="role.atual">
+                <div class="entry-heading">
+                  <h4>{{ role.cargo }}</h4>
+                  @if (role.atual) {
+                    <span class="badge">{{ text.currentRole }}</span>
+                  }
+                </div>
+                <p class="period">{{ role.periodo[locale] }}</p>
+                <p class="description">{{ role.descricao[locale] }}</p>
+              </li>
+            }
+          </ol>
+        </article>
+      }
+    </div>
   </div>
 </section>

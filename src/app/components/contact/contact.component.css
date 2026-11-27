@@ -1,113 +1,15 @@
-:host {
-  display: block;
-  padding: 4.5rem 1.5rem 6rem;
-  font-family: Inter, sans-serif;
-  color: var(--portfolio-text);
-}
-
 section {
-  max-width: 48rem;
-  margin-inline: auto;
   text-align: center;
+  background: radial-gradient(ellipse at 50% 100%, rgb(36 90 171 / 18%), transparent 70%);
 }
-
-h2 {
-  margin-bottom: 1.5rem;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  background: var(--portfolio-gradient);
-  background-clip: text;
-  color: transparent;
-}
-
-h3 {
-  max-width: 22ch;
-  margin: 0 auto 1rem;
-  font-size: clamp(2.25rem, 5.5vw, 4rem);
-  line-height: 1.06;
-  letter-spacing: -0.05em;
-  text-wrap: balance;
-}
-
-h3 span {
-  display: block;
-}
-
-header p {
-  color: var(--portfolio-muted);
-  line-height: 1.6;
-  text-wrap: balance;
-}
-
-.email-button,
-.profiles a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.625rem;
-  min-height: 2.75rem;
-  border-radius: 0.625rem;
-  font-weight: 600;
-}
-
-.email-button {
-  max-width: 100%;
-  margin-top: 2rem;
-  padding: 0.9rem 1.2rem;
-  border: 0;
-  background: var(--portfolio-gradient);
-  color: var(--portfolio-ink);
-  font-family: inherit;
-  font-size: clamp(1rem, 3vw, 1.3rem);
-  overflow-wrap: anywhere;
-  cursor: pointer;
-}
-
-.email-button svg {
-  flex: none;
-}
-
-.email-button:hover {
-  box-shadow: 0 0 0 2px var(--portfolio-cyan);
-}
-
-.copy-feedback {
-  min-height: 1.5rem;
-  margin: 0.4rem 0;
-  color: var(--portfolio-muted);
-  font-size: 0.875rem;
-}
-
-.profiles {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.65rem;
-  max-width: 35rem;
-  margin-inline: auto;
-  list-style: none;
-}
-
-.profiles a {
-  width: 100%;
-  padding: 0.6rem;
-  background: var(--portfolio-panel);
-  border: 1px solid var(--portfolio-line);
-  color: var(--portfolio-text);
-  text-decoration: none;
-}
-
-.profiles a:hover,
-.profiles a:focus-visible {
-  border-color: var(--portfolio-cyan);
-  color: var(--portfolio-cyan);
-}
-
-@media (max-width: 520px) {
-  :host {
-    padding: 3rem 1rem 5rem;
-  }
-
-  .profiles {
-    max-width: 22rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+.section-heading { margin-bottom: 1.6rem; }
+.section-heading::before { display: none; }
+.eyebrow { justify-content: center; }
+.eyebrow::after { content: ""; width: 2rem; height: 2px; background: var(--portfolio-gradient); }
+h2 { max-width: 22ch; margin-inline: auto; }
+h2 span { display: block; }
+.section-heading p { margin-inline: auto; text-wrap: balance; }
+.email-button { max-width: 100%; overflow-wrap: anywhere; }
+.email-button svg { flex: none; }
+.copy-feedback { min-height: 1.5rem; margin: .3rem 0; color: var(--portfolio-muted); font-size: .875rem; }
+.profiles { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; list-style: none; }

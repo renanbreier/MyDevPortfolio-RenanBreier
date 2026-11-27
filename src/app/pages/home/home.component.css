@@ -1,37 +1,18 @@
+:host { display: block; }
 .backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 40;
-  background-color: #245aab;
-  border: 1px solid var(--portfolio-line);
-  color: #fff;
-  padding: 10px;
-  border-radius: 50px;
-  cursor: pointer;
   display: none;
-  box-shadow: -6px 5px 12px 1px rgba(0, 0, 0, 0.7);
+  position: fixed;
+  bottom: 1.1rem;
+  right: 1.1rem;
+  z-index: 20;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--portfolio-line);
+  border-radius: .55rem;
+  background: var(--portfolio-panel);
+  box-shadow: var(--shadow);
 }
-
-.backToTop.show {
-  display: block;
-}
-
-img {
-  width: 50px;
-}
-
-@media (max-width: 500px) {
-  img {
-    width: 25px;
-  }
-}
-
-@media (max-width: 380px) {
-  .backToTop {
-    padding: 5px;
-  }
-  img {
-    width: 20px;
-  }
-}
+.backToTop.show { display: grid; }
+.backToTop:hover { border-color: var(--portfolio-blue); }
+.backToTop img { filter: brightness(0) invert(1); }

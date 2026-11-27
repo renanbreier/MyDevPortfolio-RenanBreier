@@ -1,37 +1,22 @@
-<div class="about_container" id="section1">
-  <div class="about_text portfolio-reveal">
-    @let text = language.text();
-    <h1>{{ text.aboutTitle }}</h1>
-    <p>{{ text.aboutIntroStart }}<span>{{ text.aboutRole }}</span>{{ text.aboutIntroEnd }}</p>
-    @for (paragraph of text.aboutParagraphs; track $index) {
-      <br>
-      <p>{{ paragraph }}</p>
-    }
+@let text = language.text();
+<section class="portfolio-section" id="section1" aria-labelledby="about-title">
+  <div class="shell about-layout">
+    <header class="section-heading portfolio-reveal">
+      <h2 id="about-title">{{ text.aboutTitle }}</h2>
+      <div class="social-links">
+        <app-button title="LinkedIn" link="https://www.linkedin.com/in/renanbreier/" logo="assets/icons/linkedin_icon.svg"></app-button>
+        <app-button title="GitHub" link="https://github.com/renanbreier" logo="assets/projects/git2.svg"></app-button>
+        <app-button title="Instagram" link="https://www.instagram.com/renan.breier/" logo="assets/icons/instagram.png"></app-button>
+      </div>
+    </header>
+    <div class="bio portfolio-reveal">
+      <p class="intro">{{ text.aboutIntroStart }}<strong>{{ text.aboutRole }}</strong>{{ text.aboutIntroEnd }}</p>
+      <details>
+        <summary>{{ text.moreAbout }}</summary>
+        @for (paragraph of text.aboutParagraphs; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+      </details>
+    </div>
   </div>
-  <div class="button-links_container portfolio-reveal">
-    <app-button
-      class="button"
-      width="300px"
-      height="100px"
-      title="Linkedin"
-      link="https://www.linkedin.com/in/renanbreier/"
-      logo="assets/icons/linkedin_icon.svg"
-    ></app-button>
-    <app-button
-      class="button"
-      width="300px"
-      height="100px"
-      title="GitHub"
-      link="https://github.com/renanbreier"
-      logo="assets/projects/git2.svg"
-    ></app-button>
-    <app-button
-      class="button"
-      width="300px"
-      height="100px"
-      title="Instagram"
-      link="https://www.instagram.com/renan.breier/#"
-      logo="assets/icons/instagram.png"
-    ></app-button>
-  </div>
-</div>
+</section>

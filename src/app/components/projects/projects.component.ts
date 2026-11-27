@@ -7,8 +7,6 @@ interface Project {
   description: Localized<string>;
   techs: string[];
   link: string;
-  colorFrom: string; // hex or css color
-  colorTo: string;
   image: string;
 }
 
@@ -35,8 +33,6 @@ export class ProjectsComponent {
       },
       techs: ['Angular', 'DevExtreme', 'TypeScript', 'Java', 'Spring'],
       link: 'https://github.com/renanbreier/NotaFiscal-System',
-      colorFrom: '#3B82F6',
-      colorTo: '#06B6D4',
       image: 'assets/projects/notafiscal.png',
     },
     {
@@ -51,8 +47,6 @@ export class ProjectsComponent {
       },
       techs: ['Java', 'Spring', 'AWS', 'Amazon SES'],
       link: 'https://github.com/renanbreier/Java-Email-Sender',
-      colorFrom: '#3B82F6',
-      colorTo: '#60A5FA',
       image: 'assets/projects/emailjava.png',
     },
     {
@@ -67,8 +61,6 @@ export class ProjectsComponent {
       },
       techs: ['React', 'Vite', 'Python', 'Django'],
       link: 'https://github.com/renanbreier/Django-Assets',
-      colorFrom: '#EF4444',
-      colorTo: '#FB923C',
       image: 'assets/projects/controleativos.png',
     },
     {
@@ -83,8 +75,6 @@ export class ProjectsComponent {
       },
       techs: ['Flutter', 'Dart', 'FireBase', 'NoSQL'],
       link: 'https://github.com/renanbreier/DatingApp-V2-FlutterProject',
-      colorFrom: '#EC4899',
-      colorTo: '#FB7185',
       image: 'assets/projects/datingapp2.png',
     },
     {
@@ -99,8 +89,6 @@ export class ProjectsComponent {
       },
       techs: ['Angular', 'TypeScript', 'Python', 'Django', 'Docker'],
       link: 'https://github.com/renanbreier/toDo-Flask-Angular',
-      colorFrom: '#D97706',
-      colorTo: '#F59E0B',
       image: 'assets/projects/todolist.jpeg',
     },
     {
@@ -115,8 +103,6 @@ export class ProjectsComponent {
       },
       techs: ['Java', 'Spring', 'GraphQL'],
       link: 'https://github.com/renanbreier/Spring-GraphQL-API',
-      colorFrom: '#10B981',
-      colorTo: '#14B8A6',
       image: 'assets/projects/graphql-api.png',
     },
     {
@@ -131,17 +117,7 @@ export class ProjectsComponent {
       },
       techs: ['React', 'Vite', 'JavaScript', 'REST API'],
       link: 'https://github.com/renanbreier/React-ConsumoAPIs',
-      colorFrom: '#7C3AED',
-      colorTo: '#A78BFA',
       image: 'assets/projects/jogovelha.png',
     },
   ];
-
-  get featuredProject(): Project {
-    return this.projects[0];
-  }
-
-  get otherProjects(): Project[] {
-    return this.projects.slice(1);
-  }
 }

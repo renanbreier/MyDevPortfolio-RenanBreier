@@ -1,34 +1,26 @@
 @let text = language.text();
-<div class="bigCard_container" id="section0">
-  <div class="bigCard_text">
-    <h5 [attr.aria-label]="text.welcome">{{ displayedText() }}</h5>
-    <h1 class="titulo">{{ text.roleFirst }} <span class="portfolio-text-accent">{{ text.roleHighlight }}</span></h1>
-    <div class="button-icons-container">
-      <button class="cta-button" (click)="scrollToSection('section3')">
-        {{ text.viewProjects }}
-        <span class="arrow" aria-hidden="true">→</span>
-      </button>
-      <div class="icons">
-        <a href="https://github.com/renanbreier" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/renanbreier" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="javascript:void(0)" (click)="scrollToSection('section5')" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+<section id="section0" aria-labelledby="hero-title">
+  <div class="shell hero-layout">
+    <div class="hero-enter">
+      <div class="eyebrow">{{ text.welcome }}</div>
+      <h1 id="hero-title">Renan<br>Breier<span class="accent">.</span></h1>
+      <p class="role">{{ text.roleFirst }} {{ text.roleHighlight }}</p>
+      <p class="section-copy">{{ text.heroSummary }}</p>
+      <div class="hero-actions">
+        <a class="action primary" href="#section3">{{ text.viewProjects }}</a>
+        <a class="action" href="#section5">{{ text.contact }}</a>
       </div>
     </div>
+    <figure class="portrait surface hero-enter">
+      <img class="portrait-image" src="assets/photo.png" alt="Renan Breier" width="1024" height="1024" fetchpriority="high">
+      <figcaption>
+        <a href="https://github.com/renanbreier" target="_blank" rel="noopener noreferrer">
+          <img src="assets/projects/git2.svg" width="18" height="18" alt="GitHub">&#64;renanbreier
+        </a>
+        <a href="https://linkedin.com/in/renanbreier" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="assets/icons/linkedin_icon.svg" width="18" height="18" alt="">
+        </a>
+      </figcaption>
+    </figure>
   </div>
-  <div class="bigCard_photo">
-    <a
-      href="https://github.com/renanbreier"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="GitHub"
-    >
-      <img src="../../../assets/photo.png" alt="" srcset="" />
-    </a>
-  </div>
-</div>
+</section>

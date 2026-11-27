@@ -1,11 +1,13 @@
 <app-menu-bar></app-menu-bar>
-<app-bigcard></app-bigcard>
-<app-about></app-about>
-<app-skills></app-skills>
-<app-projects></app-projects>
-<app-timeline></app-timeline>
-<app-formations></app-formations>
-<app-contact></app-contact>
+<main>
+  <app-bigcard></app-bigcard>
+  <app-about></app-about>
+  <app-skills></app-skills>
+  <app-projects></app-projects>
+  <app-timeline></app-timeline>
+  <app-formations></app-formations>
+  <app-contact></app-contact>
+</main>
 <button appBackToTop class="backToTop" [attr.aria-label]="language.text().backToTop" (click)="scrollToTop()">
-  <img class="icon" src="../../../assets/up-arrow.svg" alt="" srcset="" />
+  <img class="icon" src="assets/up-arrow.svg" width="20" height="20" alt="" />
 </button>

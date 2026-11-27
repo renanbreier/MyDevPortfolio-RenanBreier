@@ -1,69 +1,34 @@
 @let text = language.text();
 @let english = language.language() === 'en-US';
-<div class="container_header">
-  <div class="title_container">
-    <div class="title1">
-      <h1>Renan</h1>
-    </div>
-    <div class="title2">
-      <h1>Breier</h1>
-    </div>
-  </div>
-  <div class="container_contacts">
-    <div class="links">
-      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section0')">{{ text.home }}</a>
-        </button>
-        <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section1')">{{ text.about }}</a>
-        </button>
-        <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section4')">{{ text.skills }}</a>
-        </button>
-        <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section3')">{{ text.projects }}</a>
-        </button>
-        <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('jobs')">{{ text.experience }}</a>
-        </button>
-        <button mat-menu-item>
-          <a href="javascript:void(0)" (click)="scrollToSection('section6')">{{ text.educationTitle }}</a>
-        </button>
+@let links = [
+  { id: 'section0', title: text.home }, { id: 'section1', title: text.about },
+  { id: 'section4', title: text.skills }, { id: 'section3', title: text.projects },
+  { id: 'jobs', title: text.experience }, { id: 'section6', title: text.educationTitle }
+];
+<header>
+  <div class="shell nav-bar">
+    <a class="wordmark" href="#section0" aria-label="Renan Breier">
+      <span class="monogram" aria-hidden="true">rb<span>.</span></span>
+      <span class="brand-name">Renan Breier</span>
+    </a>
+    <nav aria-label="Menu">
+      @for (item of links; track item.id) {
+        <a [href]="'#' + item.id">{{ item.title }}</a>
+      }
+    </nav>
+    <div class="controls">
+      <button type="button" class="action mobile-menu" [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu" class="portfolio-menu">
+        @for (item of links; track item.id) {
+          <button mat-menu-item (click)="scrollToSection(item.id)">{{ item.title }}</button>
+        }
+        <button mat-menu-item (click)="scrollToSection('section5')">{{ text.contact }}</button>
       </mat-menu>
-      <a href="javascript:void(0)" (click)="scrollToSection('section0')">{{ text.home }}</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('section1')">{{ text.about }}</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('section4')">{{ text.skills }}</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('section3')">{{ text.projects }}</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('jobs')">{{ text.experience }}</a>
-      <a href="javascript:void(0)" (click)="scrollToSection('section6')">{{ text.educationTitle }}</a>
-    </div>
-    <div class="contact">
-      <button (click)="scrollToSection('section5')">
-        <div class="content">
-          <img src="../../../assets/email_send.svg" alt="" />
-          <h1>{{ text.contact }}</h1>
-        </div>
+      <a class="action contact-link" href="#section5">{{ text.contact }}</a>
+      <button type="button" class="language-switch" role="switch" [attr.aria-checked]="english"
+        [attr.aria-label]="text.englishLanguage" (click)="language.select(english ? 'pt-BR' : 'en-US')">
+        <span [class.selected]="!english">PT</span><span [class.selected]="english">EN</span>
       </button>
     </div>
-    <button
-      type="button"
-      class="language-switch"
-      role="switch"
-      [attr.aria-checked]="english"
-      [attr.aria-label]="text.englishLanguage"
-      (click)="language.select(english ? 'pt-BR' : 'en-US')"
-    >
-      <span class="language-track" aria-hidden="true">
-        <span>PT</span>
-        <span>EN</span>
-        <img
-          class="language-thumb"
-          [src]="english ? 'assets/flags/us.svg' : 'assets/flags/br.svg'"
-          alt=""
-        />
-      </span>
-    </button>
   </div>
-</div>
+</header>

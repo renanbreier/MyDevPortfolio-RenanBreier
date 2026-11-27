@@ -1,26 +1,28 @@
 @let text = language.text();
 @let locale = language.language();
-<section id="section6" aria-labelledby="education-title">
-  <header class="header portfolio-reveal">
-    <h2 id="education-title">&lt; {{ text.educationTitle }} /&gt;</h2>
-  </header>
+<section class="portfolio-section" id="section6" aria-labelledby="education-title">
+  <div class="shell resume-layout">
+    <header class="section-heading portfolio-reveal">
+      <h2 id="education-title">{{ text.educationTitle }}</h2>
+    </header>
 
-  <div class="organizations">
-    <article class="organization">
-      <header class="organization-header">
-        <img class="organization-logo" src="assets/education/ifsp.jpeg" width="56" height="56" alt="" loading="lazy">
-        <h3>{{ degree.institution }} (IFSP)</h3>
-      </header>
+    <div class="organizations">
+      <article class="organization surface portfolio-reveal">
+        <header class="organization-header">
+          <img class="organization-logo" src="assets/education/ifsp.jpeg" width="56" height="56" alt="" loading="lazy">
+          <h3>{{ degree.institution }} (IFSP)</h3>
+        </header>
 
-      <ol class="entries">
-        <li class="entry">
-          <div class="entry-heading">
-            <h4>{{ degree.title[locale] }}</h4>
-          </div>
-          <p class="period">{{ degree.period }}</p>
-          <p class="description">{{ degree.description[locale] }}</p>
-        </li>
-      </ol>
-    </article>
+        <ol class="entries">
+          <li class="entry">
+            <div class="entry-heading">
+              <h4>{{ degree.title[locale] }}</h4>
+            </div>
+            <p class="period">{{ degree.period }}</p>
+            <p class="description">{{ degree.description[locale] }}</p>
+          </li>
+        </ol>
+      </article>
+    </div>
   </div>
 </section>

@@ -1,27 +1,18 @@
 @let text = language.text();
 @let locale = language.language();
-<section id="section4" class="skills-section">
-  <div class="content-wrapper">
-    <div class="header portfolio-reveal">
-      <h2 class="title">&lt; {{ text.skillsTitle }} /&gt;</h2>
-      <p class="subtitle">
-        {{ text.skillsSubtitle }}
-      </p>
-    </div>
-
+<section id="section4" class="portfolio-section" aria-labelledby="skills-title">
+  <div class="shell">
+    <header class="section-heading portfolio-reveal">
+      <h2 id="skills-title">{{ text.skillsTitle }}</h2>
+      <p>{{ text.skillsSubtitle }}</p>
+    </header>
     <div class="grid">
-      @for (skill of skillsList; track skill) {
-        <div
-          class="skill-card portfolio-reveal"
-          [style.--from]="skill.gradientFrom"
-          [style.--to]="skill.gradientTo"
-        >
-          <div class="icon-wrapper">
-            <img [src]="skill.iconClass" />
-          </div>
-          <h3 class="skill-title">{{ skill.name }}</h3>
-          <p class="skill-desc">{{ skill.description[locale] }}</p>
-        </div>
+      @for (skill of skillsList; track skill.name) {
+        <article class="skill-card surface interactive-surface portfolio-reveal">
+          <img [src]="skill.iconClass" alt="" width="34" height="34" loading="lazy">
+          <h3>{{ skill.name }}</h3>
+          <p>{{ skill.description[locale] }}</p>
+        </article>
       }
     </div>
   </div>
